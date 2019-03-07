@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Skynet 基础笔记方便自己查询 Config启动 skynet 服务器需要提供一个配置文件，配置文件的编写可以参考 examples/config ，下面是一个简单的配置文件范例：12345678910111213root = &quot;./&quot;thread = 8logger = nilharbor = 1address = &quot;127.0.0.1:2526&quot;master = &quot;127.0.0.1:20">
+<meta name="keywords" content="skynet,game server">
+<meta property="og:type" content="article">
+<meta property="og:title" content="skynet基础">
+<meta property="og:url" content="http://yoursite.com/2017/05/16/skynet基础/index.html">
+<meta property="og:site_name" content="log for life">
+<meta property="og:description" content="Skynet 基础笔记方便自己查询 Config启动 skynet 服务器需要提供一个配置文件，配置文件的编写可以参考 examples/config ，下面是一个简单的配置文件范例：12345678910111213root = &quot;./&quot;thread = 8logger = nilharbor = 1address = &quot;127.0.0.1:2526&quot;master = &quot;127.0.0.1:20">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-07T04:06:57.179Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="skynet基础">
+<meta name="twitter:description" content="Skynet 基础笔记方便自己查询 Config启动 skynet 服务器需要提供一个配置文件，配置文件的编写可以参考 examples/config ，下面是一个简单的配置文件范例：12345678910111213root = &quot;./&quot;thread = 8logger = nilharbor = 1address = &quot;127.0.0.1:2526&quot;master = &quot;127.0.0.1:20">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="log for life" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/16/skynet基础/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>skynet基础 | log for life</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120213406-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120213406-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">log for life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/16/skynet基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Blake">
+      <meta itemprop="description" content="记录生活">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="log for life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">skynet基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-05-16 17:31:16" itemprop="dateCreated datePublished" datetime="2017-05-16T17:31:16+08:00">2017-05-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-07 12:06:57" itemprop="dateModified" datetime="2019-03-07T12:06:57+08:00">2019-03-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/16/skynet基础/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/16/skynet基础/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Skynet-基础笔记"><a href="#Skynet-基础笔记" class="headerlink" title="Skynet 基础笔记"></a><a href="https://github.com/cloudwu/skynet/wiki" target="_blank" rel="noopener">Skynet 基础笔记</a></h1><p>方便自己查询</p>
+<h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a><a href="https://github.com/cloudwu/skynet/wiki/Config" target="_blank" rel="noopener">Config</a></h2><p>启动 skynet 服务器需要提供一个配置文件，配置文件的编写可以参考 examples/config ，下面是一个简单的配置文件范例：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">root = <span class="string">"./"</span></span><br><span class="line">thread = <span class="number">8</span></span><br><span class="line">logger = <span class="literal">nil</span></span><br><span class="line">harbor = <span class="number">1</span></span><br><span class="line">address = <span class="string">"127.0.0.1:2526"</span></span><br><span class="line">master = <span class="string">"127.0.0.1:2013"</span></span><br><span class="line">start = <span class="string">"main"</span>	<span class="comment">-- main script</span></span><br><span class="line">bootstrap = <span class="string">"snlua bootstrap"</span>	<span class="comment">-- The service for bootstrap</span></span><br><span class="line">standalone = <span class="string">"0.0.0.0:2013"</span></span><br><span class="line">luaservice = root..<span class="string">"service/?.lua;"</span>..root..<span class="string">"test/?.lua;"</span>..root..<span class="string">"examples/?.lua"</span></span><br><span class="line">lualoader = <span class="string">"lualib/loader.lua"</span></span><br><span class="line">snax = root..<span class="string">"examples/?.lua;"</span>..root..<span class="string">"test/?.lua"</span></span><br><span class="line"><span class="built_in">cpath</span> = root..<span class="string">"cservice/?.so"</span></span><br></pre></td></tr></table></figure></p>
+<p>这个配置文件实际上就是一段 lua 代码，通常，我们以 key = value 的形式对配置项赋值。skynet 在启动时，会读取里面必要的配置项，并将暂时用不到的配置项以字符串形式保存在 skynet 内部的 env 表中。这些配置项可以通过 skynet.getenv 获取。<br>必要的配置项有：</p>
+<ul>
+<li>thread 启动多少个工作线程。通常不要将它配置超过你实际拥有的 CPU 核心数。</li>
+<li>bootstrap skynet 启动的第一个服务以及其启动参数。默认配置为 snlua bootstrap ，即启动一个名为 bootstrap 的 lua 服务。通常指的是 service/bootstrap.lua 这段代码。</li>
+<li>cpath 用 C 编写的服务模块的位置，通常指 cservice 下那些 .so 文件。如果你的系统的动态库不是以 .so 为后缀，需要做相应的修改。这个路径可以配置多项，以 ; 分割。<a id="more"></a>
+</li>
+</ul>
+<h2 id="DataCenter"><a href="#DataCenter" class="headerlink" title="DataCenter"></a><a href="https://github.com/cloudwu/skynet/wiki/DataCenter" target="_blank" rel="noopener">DataCenter</a></h2><p>datacenter 类似一个全网络共享的注册表。它是一个树结构，任何人都可以向其中写入一些合法的 lua 数据，其它服务可以从中取出来。所以你可以把一些需要跨节点访问的服务，自己把其地址记在 datacenter 中，需要的人可以读出。<br>datacenter 是一个 lua 库，使用：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> datacenter = <span class="built_in">require</span> <span class="string">"datacenter"</span></span><br><span class="line"></span><br><span class="line">datacenter.set(key1, key2, ... , value) <span class="comment">--  可以向 key1.key2 设置一个值 value 。这个 api 至少需要两个参数，没有特别限制树结构的层级数。</span></span><br><span class="line">datacenter.get(key1, key2, ...) <span class="comment">-- 从 key1.key2 读一个值。这个 api 至少需要一个参数，如果传入多个参数，则用来读出树的一个分支。</span></span><br><span class="line">datacenter.wait(key1, key2, ...) <span class="comment">--  同 get 方法，但如果读取的分支为 nil 时，这个函数会阻塞，直到有人更新这个分支才返回。当读写次序不确定，但你需要读到其它地方写入的数据后再做后续事情时，用它比循环尝试读取要好的多。wait 必须作用于一个叶节点，不能等待一个分支。</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="UniqueService"><a href="#UniqueService" class="headerlink" title="UniqueService"></a><a href="https://github.com/cloudwu/skynet/wiki/UniqueService" target="_blank" rel="noopener">UniqueService</a></h2><p>我们可以通过 skynet.newservice 启动一个 lua 编写的服务。同一段脚本可以启动多份，每个有不同的地址。地址是区分不同服务的唯一标识。<br>但有时，整个系统中解决一类事务只需要一个服务，在系统启动时，它便启动好，而其它服务需要知道它的地址以便于使用它。这个时候，使用 skynet.uniqueservice 是更好的选择。<br>skynet.uniqueservice 和 skynet.newservice 的输入参数相同，都可以以一个脚本名称找到一段 lua 脚本并启动它，返回这个服务的地址。但和 newservice 不同，每个名字的脚本在同一个 skynet 节点只会启动一次。如果已有同名服务启动或启动中，后调用的人获得的是前一次启动的服务的地址。<br>很多skynet 库都附带有一个独立服务，你可以在库的初始化时，写上类似的语句：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> SERVICE</span><br><span class="line">skynet.init(<span class="function"><span class="keyword">function</span><span class="params">()</span></span></span><br><span class="line">  SERVICE = skynet.uniqueservice <span class="string">"foobar"</span></span><br><span class="line"><span class="keyword">end</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这个范例会注册一个初始化函数去初始化 SERVICE 变量。而你的库函数就可以使用 SERVICE 这个地址来访问对应的唯一的 foobar 服务了。<br>和 DataCenter 不同，uniqueservice 是一个专用于服务管理的模块。它在服务地址管理上做了特别的优化。因为对于同一个名字，只允许启动一次，且不准更换。所以，在实现上，我们可以在每个节点缓存查询过的结果，而不必每次都去中心节点查询。</p>
+<h2 id="LuaAPI"><a href="#LuaAPI" class="headerlink" title="LuaAPI"></a><a href="https://github.com/cloudwu/skynet/wiki/LuaAPI" target="_blank" rel="noopener">LuaAPI</a></h2><p>skynet 提供了一个叫做 skynet 的 lua 模块提供给 snlua 服务承载的 Lua 脚本使用。你只需要编写一个后缀为 .lua 的脚本文件，把文件名作为启动参数，启动 snlua 即可。（关于脚本路径的配置，见 Config）<br>通常，你需要在脚本的第一行写上：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> skynet = <span class="built_in">require</span> <span class="string">"skynet"</span></span><br></pre></td></tr></table></figure></p>
+<p>注：skynet 这个模块不能在 skynet 框架之外使用，所以你用标准的 lua 解析器运行包含了 skynet 模块的代码会立即出错。这是因为，每个 skynet 服务都依赖一个 skynet_context 的 C 对象，它是由 snlua 导入到 lua 虚拟机中的。<br>每个 skynet 服务，最重要的职责就是处理别的服务发送过来的消息，以及向别的服务发送消息。每条 skynet 消息由五个元素构成。</p>
+<ol>
+<li>session ：大部分消息工作在请求回应模式下。即，一个服务向另一个服务发起一个请求，而后收到请求的服务在处理完请求消息后，回复一条消息。session 是由发起请求的服务生成的，对它自己唯一的消息标识。回应方在回应时，将 session 带回。这样发送方才能识别出哪条消息是针对哪条的回应。session 是一个非负整数，当一条消息不需要回应时，按惯例，使用 0 这个特殊的 session 号。session 由 skynet 框架生成管理，通常不需要使用者关心。</li>
+<li>source ：消息源。每个服务都由一个 32bit 整数标识。这个整数可以看成是服务在 skynet 系统中的地址。即使在服务退出后，新启动的服务通常也不会使用已用过的地址（除非发生回绕，但一般间隔时间非常长）。每条收到的消息都携带有 source ，方便在回应的时候可以指定地址。但地址的管理通常由框架完成，用户不用关心。</li>
+<li>type ：消息类别。每个服务可以接收 256 种不同类别的消息。每种类别可以有不同的消息编码格式。有十几种类别是框架保留的，通常也不建议用户定义新的消息类别。因为用户完全可以利用已有的类别，而用具体的消息内容来区分每条具体的含义。框架把这些 type 映射为字符串便于记忆。最常用的消息类别名为 “lua” 广泛用于用 lua 编写的 skynet 服务间的通讯。</li>
+<li>messsage ：消息的 C 指针，在 Lua 层看来是一个 lightuserdata 。框架会隐藏这个细节，最终用户处理的是经过解码过的 lua 对象。只有极少情况，你才需要在 lua 层直接操作这个指针。</li>
+<li>size ：消息的长度。通常和 message 一起结合起来使用。</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/skynet/" rel="tag"># skynet</a>
+          
+            <a href="/tags/game-server/" rel="tag"># game server</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/14/游戏战斗系统设计/" rel="next" title="游戏战斗系统设计">
+                <i class="fa fa-chevron-left"></i> 游戏战斗系统设计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/05/python笔记/" rel="prev" title="python笔记">
+                python笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg" alt="Blake">
+            
+              <p class="site-author-name" itemprop="name">Blake</p>
+              <p class="site-description motion-element" itemprop="description">记录生活</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/blakejia" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:blakejia@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/blake_jia" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Skynet-基础笔记"><span class="nav-number">1.</span> <span class="nav-text">Skynet 基础笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Config"><span class="nav-number">1.1.</span> <span class="nav-text">Config</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataCenter"><span class="nav-number">1.2.</span> <span class="nav-text">DataCenter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UniqueService"><span class="nav-number">1.3.</span> <span class="nav-text">UniqueService</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LuaAPI"><span class="nav-number">1.4.</span> <span class="nav-text">LuaAPI</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Blake</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://1024-center.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2017/05/16/skynet基础/';
+        this.page.identifier = '2017/05/16/skynet基础/';
+        this.page.title = 'skynet基础';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://1024-center.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

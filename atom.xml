@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>log for life</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-03-07T04:06:57.178Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Blake</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cocos flux 架构</title>
+    <link href="http://yoursite.com/2018/06/04/cocos-flux-%E6%9E%B6%E6%9E%84/"/>
+    <id>http://yoursite.com/2018/06/04/cocos-flux-架构/</id>
+    <published>2018-06-04T03:36:52.000Z</published>
+    <updated>2019-03-07T04:06:57.178Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#开个新坑&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://1024center-1253758339.cos.ap-shanghai.myqcloud.com/img/flux_flow.png&quot; alt&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="cocos" scheme="http://yoursite.com/tags/cocos/"/>
+    
+      <category term="flux" scheme="http://yoursite.com/tags/flux/"/>
+    
+      <category term="cocos js" scheme="http://yoursite.com/tags/cocos-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git hook 环境变量</title>
+    <link href="http://yoursite.com/2018/06/01/git-hook-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+    <id>http://yoursite.com/2018/06/01/git-hook-环境变量/</id>
+    <published>2018-06-01T12:50:04.000Z</published>
+    <updated>2019-03-07T04:06:57.178Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Docker下安装的gogs&lt;/p&gt;
+&lt;h2 id=&quot;git-hook-执行时的环境变量&quot;&gt;&lt;a href=&quot;#git-hook-执行时的环境变量&quot; class=&quot;headerlink&quot; title=&quot;git hook 执行时的环境变量&quot;&gt;&lt;/a&gt;git hook 执行时的环境变量&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;HOSTNAME=gogs-gogs1                                                                                                                                              &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;TERM=xterm                                                                                                      &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;USER=git                                                               &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GOGS_REPO_CUSTOM_HOOKS_PATH=/data/git/gogs-repositories/user/gitRepo.git/custom_hooks&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GOGS_REPO_ID=2                                                                              &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GIT_PUSH_OPTION_COUNT=0                                                                                                       &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PATH=/usr/libexec/git-core:/usr/libexec/git-core:/usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/sbin:/usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/bin:/usr/sbin:/usr/bin:/sbin:/bin               &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PWD=/data/git/gogs-repositories/user/gitRepo.git           &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GOGS_REPO_OWNER_NAME=user&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GOGS_AUTH_USER_NAME=user&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GOGS_REPO_NAME=gitRepo&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SHLVL=4                                                                                                &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;HOME=/data/git                                                                        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SSH_ORIGINAL_COMMAND=1                                                                &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GOGS_AUTH_USER_ID=1                                                                   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GOGS_AUTH_USER_EMAIL=xxxx@mail.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GOGS_CUSTOM=/data/gogs                                                                                             &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GOGS_REPO_OWNER_SALT_MD5=94d5344c25db5ceaea76fff71f44dd51&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用Docker 搭建V2Ray</title>
+    <link href="http://yoursite.com/2018/06/01/%E7%94%A8Docker-%E6%90%AD%E5%BB%BAV2Ray/"/>
+    <id>http://yoursite.com/2018/06/01/用Docker-搭建V2Ray/</id>
+    <published>2018-06-01T12:46:03.000Z</published>
+    <updated>2019-03-07T04:06:57.179Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;docker 运行&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run -d --restart=always --name v2ray -v /path/v2ray:/etc/v2ray -p 7777:1080 v2ray/official v2ray -config=/etc/v2ray/config.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
+    
+      <category term="v2ray" scheme="http://yoursite.com/tags/v2ray/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python笔记</title>
+    <link href="http://yoursite.com/2017/06/05/python%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2017/06/05/python笔记/</id>
+    <published>2017-06-05T03:12:31.000Z</published>
+    <updated>2019-03-07T04:06:57.179Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;序列类型&quot;&gt;&lt;a href=&quot;#序列类型&quot; class=&quot;headerlink&quot; title=&quot;序列类型&quot;&gt;&lt;/a&gt;序列类型&lt;/h1&gt;&lt;p&gt;6种：列表、元组、字符串、Unicode字符串、buffer对象、xrange对象&lt;/p&gt;
+&lt;h2 id=&quot;列表（list）
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>skynet基础</title>
+    <link href="http://yoursite.com/2017/05/16/skynet%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2017/05/16/skynet基础/</id>
+    <published>2017-05-16T09:31:16.000Z</published>
+    <updated>2019-03-07T04:06:57.179Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Skynet-基础笔记&quot;&gt;&lt;a href=&quot;#Skynet-基础笔记&quot; class=&quot;headerlink&quot; title=&quot;Skynet 基础笔记&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/cloudwu/skynet/wiki&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Skynet 基础笔记&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;方便自己查询&lt;/p&gt;
+&lt;h2 id=&quot;Config&quot;&gt;&lt;a href=&quot;#Config&quot; class=&quot;headerlink&quot; title=&quot;Config&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/cloudwu/skynet/wiki/Config&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Config&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;启动 skynet 服务器需要提供一个配置文件，配置文件的编写可以参考 examples/config ，下面是一个简单的配置文件范例：&lt;br&gt;&lt;figure class=&quot;highlight lua&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;root = &lt;span class=&quot;string&quot;&gt;&quot;./&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;thread = &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;logger = &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;harbor = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;address = &lt;span class=&quot;string&quot;&gt;&quot;127.0.0.1:2526&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;master = &lt;span class=&quot;string&quot;&gt;&quot;127.0.0.1:2013&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;start = &lt;span class=&quot;string&quot;&gt;&quot;main&quot;&lt;/span&gt;	&lt;span class=&quot;comment&quot;&gt;-- main script&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bootstrap = &lt;span class=&quot;string&quot;&gt;&quot;snlua bootstrap&quot;&lt;/span&gt;	&lt;span class=&quot;comment&quot;&gt;-- The service for bootstrap&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;standalone = &lt;span class=&quot;string&quot;&gt;&quot;0.0.0.0:2013&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;luaservice = root..&lt;span class=&quot;string&quot;&gt;&quot;service/?.lua;&quot;&lt;/span&gt;..root..&lt;span class=&quot;string&quot;&gt;&quot;test/?.lua;&quot;&lt;/span&gt;..root..&lt;span class=&quot;string&quot;&gt;&quot;examples/?.lua&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;lualoader = &lt;span class=&quot;string&quot;&gt;&quot;lualib/loader.lua&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;snax = root..&lt;span class=&quot;string&quot;&gt;&quot;examples/?.lua;&quot;&lt;/span&gt;..root..&lt;span class=&quot;string&quot;&gt;&quot;test/?.lua&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cpath&lt;/span&gt; = root..&lt;span class=&quot;string&quot;&gt;&quot;cservice/?.so&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这个配置文件实际上就是一段 lua 代码，通常，我们以 key = value 的形式对配置项赋值。skynet 在启动时，会读取里面必要的配置项，并将暂时用不到的配置项以字符串形式保存在 skynet 内部的 env 表中。这些配置项可以通过 skynet.getenv 获取。&lt;br&gt;必要的配置项有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;thread 启动多少个工作线程。通常不要将它配置超过你实际拥有的 CPU 核心数。&lt;/li&gt;
+&lt;li&gt;bootstrap skynet 启动的第一个服务以及其启动参数。默认配置为 snlua bootstrap ，即启动一个名为 bootstrap 的 lua 服务。通常指的是 service/bootstrap.lua 这段代码。&lt;/li&gt;
+&lt;li&gt;cpath 用 C 编写的服务模块的位置，通常指 cservice 下那些 .so 文件。如果你的系统的动态库不是以 .so 为后缀，需要做相应的修改。这个路径可以配置多项，以 ; 分割。
+    
+    </summary>
+    
+    
+      <category term="skynet" scheme="http://yoursite.com/tags/skynet/"/>
+    
+      <category term="game server" scheme="http://yoursite.com/tags/game-server/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>游戏战斗系统设计</title>
+    <link href="http://yoursite.com/2017/04/14/%E6%B8%B8%E6%88%8F%E6%88%98%E6%96%97%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    <id>http://yoursite.com/2017/04/14/游戏战斗系统设计/</id>
+    <published>2017-04-14T07:51:47.000Z</published>
+    <updated>2019-03-07T04:06:57.179Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;总体&quot;&gt;&lt;a href=&quot;#总体&quot; class=&quot;headerlink&quot; title=&quot;总体&quot;&gt;&lt;/a&gt;总体&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;游戏管理类&lt;ul&gt;
+&lt;li&gt;时间步进器&lt;/li&gt;
+&lt;li&gt;操作类&lt;/li&gt;
+&lt;li&gt;战斗记录类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;战斗包含类&lt;ul&gt;
+&lt;li&gt;场景&lt;/li&gt;
+&lt;li&gt;军士&lt;/li&gt;
+&lt;li&gt;技能(Buff)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="游戏" scheme="http://yoursite.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="战斗" scheme="http://yoursite.com/tags/%E6%88%98%E6%96%97/"/>
+    
+      <category term="设计" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>游戏框架探索</title>
+    <link href="http://yoursite.com/2017/04/05/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6%E6%8E%A2%E7%B4%A2/"/>
+    <id>http://yoursite.com/2017/04/05/游戏框架探索/</id>
+    <published>2017-04-05T13:04:05.000Z</published>
+    <updated>2019-03-07T04:06:57.179Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Event&lt;br&gt;所有对象都能通过Event管理器抛出事件。Event对象应包含有Class对象本身、所绑定的事件名、以及具体的回掉。&lt;/li&gt;
+&lt;li&gt;EventSet&lt;br&gt;管理所有的Event事件，通过Event所监听的Key值以及优先级，去调用Event事件。&lt;/li&gt;
+&lt;li&gt;BaseClass&lt;br&gt;此类应为所有类的基类，具有通过EventSet单例绑定绑定以及解绑事件的基础方法。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="游戏" scheme="http://yoursite.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="框架" scheme="http://yoursite.com/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="Lua" scheme="http://yoursite.com/tags/Lua/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git note</title>
+    <link href="http://yoursite.com/2017/02/05/git-note/"/>
+    <id>http://yoursite.com/2017/02/05/git-note/</id>
+    <published>2017-02-05T06:32:39.000Z</published>
+    <updated>2019-03-07T04:06:57.179Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;通用&quot;&gt;&lt;a href=&quot;#通用&quot; class=&quot;headerlink&quot; title=&quot;通用&quot;&gt;&lt;/a&gt;通用&lt;/h1&gt;&lt;h2 id=&quot;使用git作为svn的版本管理工具&quot;&gt;&lt;a href=&quot;#使用git作为svn的版本管理工具&quot; class=&quot;headerlink&quot; title=&quot;使用git作为svn的版本管理工具&quot;&gt;&lt;/a&gt;使用git作为svn的版本管理工具&lt;/h2&gt;&lt;h3 id=&quot;从svn地址获取clone仓库&quot;&gt;&lt;a href=&quot;#从svn地址获取clone仓库&quot; class=&quot;headerlink&quot; title=&quot;从svn地址获取clone仓库&quot;&gt;&lt;/a&gt;从svn地址获取clone仓库&lt;/h3&gt;&lt;p&gt;使用 git clone [svn仓库地址]&lt;br&gt;ps:如果不需要把svn所有文件修改记录down下来可以添加-r HEAD 参数再最后面，这样可以只clone下来最新的文件&lt;/p&gt;
+&lt;h3 id=&quot;获取更新&quot;&gt;&lt;a href=&quot;#获取更新&quot; class=&quot;headerlink&quot; title=&quot;获取更新&quot;&gt;&lt;/a&gt;获取更新&lt;/h3&gt;&lt;p&gt;使用 git svn fetch&lt;/p&gt;
+&lt;h3 id=&quot;合并远程分支代码到本地分枝&quot;&gt;&lt;a href=&quot;#合并远程分支代码到本地分枝&quot; class=&quot;headerlink&quot; title=&quot;合并远程分支代码到本地分枝&quot;&gt;&lt;/a&gt;合并远程分支代码到本地分枝&lt;/h3&gt;&lt;p&gt;使用 git svn rebase&lt;br&gt;ps: 其实当使用这个命令的时候git会自动从svn取下当前最新代码并合并到当前本地分支，所以无特殊情况使用此命令即可&lt;/p&gt;
+&lt;h3 id=&quot;提交代码到svn&quot;&gt;&lt;a href=&quot;#提交代码到svn&quot; class=&quot;headerlink&quot; title=&quot;提交代码到svn&quot;&gt;&lt;/a&gt;提交代码到svn&lt;/h3&gt;&lt;p&gt;使用git svn dcommit&lt;br&gt;此命令会将本地所有提交一一提交到svn仓库，所以提交前最好先整理下本地提交&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="版本管理" scheme="http://yoursite.com/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+</feed>

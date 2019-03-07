@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>cocos flux 架构</title>
+      <link href="/2018/06/04/cocos-flux-%E6%9E%B6%E6%9E%84/"/>
+      <url>/2018/06/04/cocos-flux-%E6%9E%B6%E6%9E%84/</url>
+      <content type="html"><![CDATA[<p>#开个新坑</p><p><img src="https://1024center-1253758339.cos.ap-shanghai.myqcloud.com/img/flux_flow.png" alt></p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> cocos </tag>
+            
+            <tag> flux </tag>
+            
+            <tag> cocos js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>git hook 环境变量</title>
+      <link href="/2018/06/01/git-hook-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+      <url>/2018/06/01/git-hook-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</url>
+      <content type="html"><![CDATA[<p>Docker下安装的gogs</p><h2 id="git-hook-执行时的环境变量"><a href="#git-hook-执行时的环境变量" class="headerlink" title="git hook 执行时的环境变量"></a>git hook 执行时的环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">HOSTNAME=gogs-gogs1                                                                                                                                              </span><br><span class="line">TERM=xterm                                                                                                      </span><br><span class="line">USER=git                                                               </span><br><span class="line">GOGS_REPO_CUSTOM_HOOKS_PATH=/data/git/gogs-repositories/user/gitRepo.git/custom_hooks</span><br><span class="line">GOGS_REPO_ID=2                                                                              </span><br><span class="line">GIT_PUSH_OPTION_COUNT=0                                                                                                       </span><br><span class="line">PATH=/usr/libexec/git-core:/usr/libexec/git-core:/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin               </span><br><span class="line">PWD=/data/git/gogs-repositories/user/gitRepo.git           </span><br><span class="line">GOGS_REPO_OWNER_NAME=user</span><br><span class="line">GOGS_AUTH_USER_NAME=user</span><br><span class="line">GOGS_REPO_NAME=gitRepo</span><br><span class="line">SHLVL=4                                                                                                </span><br><span class="line">HOME=/data/git                                                                        </span><br><span class="line">SSH_ORIGINAL_COMMAND=1                                                                </span><br><span class="line">GOGS_AUTH_USER_ID=1                                                                   </span><br><span class="line">GOGS_AUTH_USER_EMAIL=xxxx@mail.com</span><br><span class="line">GOGS_CUSTOM=/data/gogs                                                                                             </span><br><span class="line">GOGS_REPO_OWNER_SALT_MD5=94d5344c25db5ceaea76fff71f44dd51</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="打印环境变量"><a href="#打印环境变量" class="headerlink" title="打印环境变量"></a>打印环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"><span class="built_in">unset</span> GIT_DIR</span><br><span class="line">env</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>用Docker 搭建V2Ray</title>
+      <link href="/2018/06/01/%E7%94%A8Docker-%E6%90%AD%E5%BB%BAV2Ray/"/>
+      <url>/2018/06/01/%E7%94%A8Docker-%E6%90%AD%E5%BB%BAV2Ray/</url>
+      <content type="html"><![CDATA[<p>docker 运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --restart=always --name v2ray -v /path/v2ray:/etc/v2ray -p 7777:1080 v2ray/official v2ray -config=/etc/v2ray/config.json</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>config.json</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"inbound"</span>: &#123;</span><br><span class="line">    "port": 1080, // 监听端口</span><br><span class="line">    "protocol": "socks", // 入口协议为 SOCKS 5</span><br><span class="line">    "settings": &#123;</span><br><span class="line">      "auth": "noauth"  //socks的认证设置，noauth 代表不认证，由于 socks 通常在客户端使用，所以这里不认证</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  "outbound": &#123;</span><br><span class="line">    "protocol": "vmess", // 出口协议</span><br><span class="line">    "settings": &#123;</span><br><span class="line">      "vnext": [</span><br><span class="line">        &#123;</span><br><span class="line">          "address": "your.server.com", // 服务器地址，请修改为你自己的服务器 ip 或域名</span><br><span class="line">          "port": 2000,  // 服务器端口</span><br><span class="line">          "users": [</span><br><span class="line">            &#123;</span><br><span class="line">              "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 用户 ID，必须与服务器端配置相同</span><br><span class="line">              "alterId": 64 // 此处的值也应当与服务器相同</span><br><span class="line">            &#125;</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>后面的 7777 可以换成自己的本地端口，如果只限本地使用可以换成127.0.0.1:7777</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> v2ray </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>python笔记</title>
+      <link href="/2017/06/05/python%E7%AC%94%E8%AE%B0/"/>
+      <url>/2017/06/05/python%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<h1 id="序列类型"><a href="#序列类型" class="headerlink" title="序列类型"></a>序列类型</h1><p>6种：列表、元组、字符串、Unicode字符串、buffer对象、xrange对象</p><h2 id="列表（list）"><a href="#列表（list）" class="headerlink" title="列表（list）"></a>列表（list）</h2><h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"a"</span> + <span class="string">"b"</span> <span class="comment"># &gt;&gt;&gt; ab</span></span><br><span class="line"></span><br><span class="line"><span class="string">"ab"</span> * <span class="number">2</span> <span class="comment"># &gt;&gt;&gt; abab</span></span><br><span class="line">[<span class="keyword">None</span>] * <span class="number">10</span> <span class="comment"># &gt;&gt;&gt; [None, None, None ... None]</span></span><br><span class="line"></span><br><span class="line"><span class="string">"p"</span> <span class="keyword">in</span> <span class="string">"python"</span> <span class="comment"># 检测是否包含 return Ture or False</span></span><br><span class="line"></span><br><span class="line">numbers = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">3</span>]</span><br><span class="line">len(numbers) <span class="comment"># 3</span></span><br><span class="line">max(numbers) <span class="comment"># 5</span></span><br><span class="line">min(numbers) <span class="comment"># 1</span></span><br><span class="line"></span><br><span class="line">list(<span class="string">"Hello"</span>) <span class="comment"># ["H", "e", "l", "l", "o"]</span></span><br><span class="line"></span><br><span class="line">numbers[<span class="number">1</span>] = <span class="number">20</span> <span class="comment"># 赋值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> numbers[<span class="number">0</span>] <span class="comment"># 删除首个元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分片操作</span></span><br><span class="line">data[start:end:interval]</span><br><span class="line"><span class="comment"># start：起始位置（省略代表开始） end：结束位置（省略代表到结束） interval：步长（不为0，正数从左到有，负数从又到左）</span></span><br><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">numbers[<span class="number">1</span>: <span class="number">4</span>] = [] <span class="comment"># numbers 值为 [1, 5]</span></span><br><span class="line"></span><br><span class="line">numbers.append(<span class="number">2</span>) <span class="comment"># numbers 值为 [1, 5, 2]</span></span><br><span class="line"></span><br><span class="line">numbers.count(<span class="number">1</span>) <span class="comment"># 统计参数在数组中出现次数</span></span><br><span class="line"></span><br><span class="line">numbers.extend([<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]) <span class="comment"># numbers 值为[1, 5, 2, 3, 4, 5]</span></span><br><span class="line"></span><br><span class="line">numbers.index(<span class="number">3</span>) <span class="comment"># 查找元素位置</span></span><br><span class="line">numbers.pop(<span class="number">0</span>) <span class="comment"># 弹出首个值(修改了原数组)</span></span><br><span class="line">numbers.reverse() <span class="comment"># 反转列表</span></span><br><span class="line">numbers.sort() <span class="comment"># 排序</span></span><br></pre></td></tr></table></figure><h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>不可修改<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">a = (<span class="number">1</span>, )</span><br><span class="line">a = tuple([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]) <span class="comment"># a 为 (1, 2, 3)</span></span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>skynet基础</title>
+      <link href="/2017/05/16/skynet%E5%9F%BA%E7%A1%80/"/>
+      <url>/2017/05/16/skynet%E5%9F%BA%E7%A1%80/</url>
+      <content type="html"><![CDATA[<h1 id="Skynet-基础笔记"><a href="#Skynet-基础笔记" class="headerlink" title="Skynet 基础笔记"></a><a href="https://github.com/cloudwu/skynet/wiki" target="_blank" rel="noopener">Skynet 基础笔记</a></h1><p>方便自己查询</p><h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a><a href="https://github.com/cloudwu/skynet/wiki/Config" target="_blank" rel="noopener">Config</a></h2><p>启动 skynet 服务器需要提供一个配置文件，配置文件的编写可以参考 examples/config ，下面是一个简单的配置文件范例：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">root = <span class="string">"./"</span></span><br><span class="line">thread = <span class="number">8</span></span><br><span class="line">logger = <span class="literal">nil</span></span><br><span class="line">harbor = <span class="number">1</span></span><br><span class="line">address = <span class="string">"127.0.0.1:2526"</span></span><br><span class="line">master = <span class="string">"127.0.0.1:2013"</span></span><br><span class="line">start = <span class="string">"main"</span><span class="comment">-- main script</span></span><br><span class="line">bootstrap = <span class="string">"snlua bootstrap"</span><span class="comment">-- The service for bootstrap</span></span><br><span class="line">standalone = <span class="string">"0.0.0.0:2013"</span></span><br><span class="line">luaservice = root..<span class="string">"service/?.lua;"</span>..root..<span class="string">"test/?.lua;"</span>..root..<span class="string">"examples/?.lua"</span></span><br><span class="line">lualoader = <span class="string">"lualib/loader.lua"</span></span><br><span class="line">snax = root..<span class="string">"examples/?.lua;"</span>..root..<span class="string">"test/?.lua"</span></span><br><span class="line"><span class="built_in">cpath</span> = root..<span class="string">"cservice/?.so"</span></span><br></pre></td></tr></table></figure></p><p>这个配置文件实际上就是一段 lua 代码，通常，我们以 key = value 的形式对配置项赋值。skynet 在启动时，会读取里面必要的配置项，并将暂时用不到的配置项以字符串形式保存在 skynet 内部的 env 表中。这些配置项可以通过 skynet.getenv 获取。<br>必要的配置项有：</p><ul><li>thread 启动多少个工作线程。通常不要将它配置超过你实际拥有的 CPU 核心数。</li><li>bootstrap skynet 启动的第一个服务以及其启动参数。默认配置为 snlua bootstrap ，即启动一个名为 bootstrap 的 lua 服务。通常指的是 service/bootstrap.lua 这段代码。</li><li>cpath 用 C 编写的服务模块的位置，通常指 cservice 下那些 .so 文件。如果你的系统的动态库不是以 .so 为后缀，需要做相应的修改。这个路径可以配置多项，以 ; 分割。<a id="more"></a></li></ul><h2 id="DataCenter"><a href="#DataCenter" class="headerlink" title="DataCenter"></a><a href="https://github.com/cloudwu/skynet/wiki/DataCenter" target="_blank" rel="noopener">DataCenter</a></h2><p>datacenter 类似一个全网络共享的注册表。它是一个树结构，任何人都可以向其中写入一些合法的 lua 数据，其它服务可以从中取出来。所以你可以把一些需要跨节点访问的服务，自己把其地址记在 datacenter 中，需要的人可以读出。<br>datacenter 是一个 lua 库，使用：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> datacenter = <span class="built_in">require</span> <span class="string">"datacenter"</span></span><br><span class="line"></span><br><span class="line">datacenter.set(key1, key2, ... , value) <span class="comment">--  可以向 key1.key2 设置一个值 value 。这个 api 至少需要两个参数，没有特别限制树结构的层级数。</span></span><br><span class="line">datacenter.get(key1, key2, ...) <span class="comment">-- 从 key1.key2 读一个值。这个 api 至少需要一个参数，如果传入多个参数，则用来读出树的一个分支。</span></span><br><span class="line">datacenter.wait(key1, key2, ...) <span class="comment">--  同 get 方法，但如果读取的分支为 nil 时，这个函数会阻塞，直到有人更新这个分支才返回。当读写次序不确定，但你需要读到其它地方写入的数据后再做后续事情时，用它比循环尝试读取要好的多。wait 必须作用于一个叶节点，不能等待一个分支。</span></span><br></pre></td></tr></table></figure></p><h2 id="UniqueService"><a href="#UniqueService" class="headerlink" title="UniqueService"></a><a href="https://github.com/cloudwu/skynet/wiki/UniqueService" target="_blank" rel="noopener">UniqueService</a></h2><p>我们可以通过 skynet.newservice 启动一个 lua 编写的服务。同一段脚本可以启动多份，每个有不同的地址。地址是区分不同服务的唯一标识。<br>但有时，整个系统中解决一类事务只需要一个服务，在系统启动时，它便启动好，而其它服务需要知道它的地址以便于使用它。这个时候，使用 skynet.uniqueservice 是更好的选择。<br>skynet.uniqueservice 和 skynet.newservice 的输入参数相同，都可以以一个脚本名称找到一段 lua 脚本并启动它，返回这个服务的地址。但和 newservice 不同，每个名字的脚本在同一个 skynet 节点只会启动一次。如果已有同名服务启动或启动中，后调用的人获得的是前一次启动的服务的地址。<br>很多skynet 库都附带有一个独立服务，你可以在库的初始化时，写上类似的语句：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> SERVICE</span><br><span class="line">skynet.init(<span class="function"><span class="keyword">function</span><span class="params">()</span></span></span><br><span class="line">  SERVICE = skynet.uniqueservice <span class="string">"foobar"</span></span><br><span class="line"><span class="keyword">end</span>)</span><br></pre></td></tr></table></figure></p><p>这个范例会注册一个初始化函数去初始化 SERVICE 变量。而你的库函数就可以使用 SERVICE 这个地址来访问对应的唯一的 foobar 服务了。<br>和 DataCenter 不同，uniqueservice 是一个专用于服务管理的模块。它在服务地址管理上做了特别的优化。因为对于同一个名字，只允许启动一次，且不准更换。所以，在实现上，我们可以在每个节点缓存查询过的结果，而不必每次都去中心节点查询。</p><h2 id="LuaAPI"><a href="#LuaAPI" class="headerlink" title="LuaAPI"></a><a href="https://github.com/cloudwu/skynet/wiki/LuaAPI" target="_blank" rel="noopener">LuaAPI</a></h2><p>skynet 提供了一个叫做 skynet 的 lua 模块提供给 snlua 服务承载的 Lua 脚本使用。你只需要编写一个后缀为 .lua 的脚本文件，把文件名作为启动参数，启动 snlua 即可。（关于脚本路径的配置，见 Config）<br>通常，你需要在脚本的第一行写上：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> skynet = <span class="built_in">require</span> <span class="string">"skynet"</span></span><br></pre></td></tr></table></figure></p><p>注：skynet 这个模块不能在 skynet 框架之外使用，所以你用标准的 lua 解析器运行包含了 skynet 模块的代码会立即出错。这是因为，每个 skynet 服务都依赖一个 skynet_context 的 C 对象，它是由 snlua 导入到 lua 虚拟机中的。<br>每个 skynet 服务，最重要的职责就是处理别的服务发送过来的消息，以及向别的服务发送消息。每条 skynet 消息由五个元素构成。</p><ol><li>session ：大部分消息工作在请求回应模式下。即，一个服务向另一个服务发起一个请求，而后收到请求的服务在处理完请求消息后，回复一条消息。session 是由发起请求的服务生成的，对它自己唯一的消息标识。回应方在回应时，将 session 带回。这样发送方才能识别出哪条消息是针对哪条的回应。session 是一个非负整数，当一条消息不需要回应时，按惯例，使用 0 这个特殊的 session 号。session 由 skynet 框架生成管理，通常不需要使用者关心。</li><li>source ：消息源。每个服务都由一个 32bit 整数标识。这个整数可以看成是服务在 skynet 系统中的地址。即使在服务退出后，新启动的服务通常也不会使用已用过的地址（除非发生回绕，但一般间隔时间非常长）。每条收到的消息都携带有 source ，方便在回应的时候可以指定地址。但地址的管理通常由框架完成，用户不用关心。</li><li>type ：消息类别。每个服务可以接收 256 种不同类别的消息。每种类别可以有不同的消息编码格式。有十几种类别是框架保留的，通常也不建议用户定义新的消息类别。因为用户完全可以利用已有的类别，而用具体的消息内容来区分每条具体的含义。框架把这些 type 映射为字符串便于记忆。最常用的消息类别名为 “lua” 广泛用于用 lua 编写的 skynet 服务间的通讯。</li><li>messsage ：消息的 C 指针，在 Lua 层看来是一个 lightuserdata 。框架会隐藏这个细节，最终用户处理的是经过解码过的 lua 对象。只有极少情况，你才需要在 lua 层直接操作这个指针。</li><li>size ：消息的长度。通常和 message 一起结合起来使用。</li></ol>]]></content>
+      
+      
+        <tags>
+            
+            <tag> skynet </tag>
+            
+            <tag> game server </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>游戏战斗系统设计</title>
+      <link href="/2017/04/14/%E6%B8%B8%E6%88%8F%E6%88%98%E6%96%97%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+      <url>/2017/04/14/%E6%B8%B8%E6%88%8F%E6%88%98%E6%96%97%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/</url>
+      <content type="html"><![CDATA[<h1 id="总体"><a href="#总体" class="headerlink" title="总体"></a>总体</h1><ul><li>游戏管理类<ul><li>时间步进器</li><li>操作类</li><li>战斗记录类</li></ul></li><li>战斗包含类<ul><li>场景</li><li>军士</li><li>技能(Buff)</li></ul></li></ul><a id="more"></a><h1 id="游戏管理类"><a href="#游戏管理类" class="headerlink" title="游戏管理类"></a>游戏管理类</h1><h2 id="时间步进器"><a href="#时间步进器" class="headerlink" title="时间步进器"></a>时间步进器</h2><p>用于推进整个游戏的进行,按时间间隔推进整个游戏进行,刷新场景类状态,传输每一次的时间刷新间隔</p><h2 id="操作类"><a href="#操作类" class="headerlink" title="操作类"></a>操作类</h2><p>用于整个战斗的输入系统</p><h2 id="战斗记录类"><a href="#战斗记录类" class="headerlink" title="战斗记录类"></a>战斗记录类</h2><p>将战斗系统进行打谱记录,用于战斗播报和战斗校验</p><h1 id="战斗包含类"><a href="#战斗包含类" class="headerlink" title="战斗包含类"></a>战斗包含类</h1><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>战斗场景类,包含战斗坐标系统,管理军士类</p><p>接口部分</p><ul><li>施放</li><li>移动</li><li>刷新技能状态</li></ul><h2 id="军士"><a href="#军士" class="headerlink" title="军士"></a>军士</h2><p>军士类,包含属性,拥有技能组,Buff组,表现管理,移动速度等<br>此处将场景上所有物体设计成军士,包括障碍(拥有血量,无敌的军士)</p><p>接口部分</p><ul><li>状态刷新</li></ul><h2 id="技能-Buff"><a href="#技能-Buff" class="headerlink" title="技能(Buff)"></a>技能(Buff)</h2><p>技能系统,包含技能效果,技能持续时间,表现时间,释放距离,伤害类型<br>将所有技能,普攻等一切与伤害相关的整合成Buff效果</p><p>接口部分</p><ul><li>施放(施放目标, 命中目标)</li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> 游戏 </tag>
+            
+            <tag> 战斗 </tag>
+            
+            <tag> 设计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>游戏框架探索</title>
+      <link href="/2017/04/05/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6%E6%8E%A2%E7%B4%A2/"/>
+      <url>/2017/04/05/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6%E6%8E%A2%E7%B4%A2/</url>
+      <content type="html"><![CDATA[<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><ul><li>Event<br>所有对象都能通过Event管理器抛出事件。Event对象应包含有Class对象本身、所绑定的事件名、以及具体的回掉。</li><li>EventSet<br>管理所有的Event事件，通过Event所监听的Key值以及优先级，去调用Event事件。</li><li>BaseClass<br>此类应为所有类的基类，具有通过EventSet单例绑定绑定以及解绑事件的基础方法。</li></ul><a id="more"></a><h1 id="整体分层"><a href="#整体分层" class="headerlink" title="整体分层"></a>整体分层</h1><p>以下所有类都继承自BaseClass，受事件管理影响。方便进行数据传输以及消息回掉。</p><h2 id="UI层"><a href="#UI层" class="headerlink" title="UI层"></a>UI层</h2><p>优先级从上至下大致分为</p><ul><li>Error Tip<br>   特殊弹窗管理层</li><li>Tip<br>   普通弹窗管理层</li><li>Module<br>   功能模块层中，应分为Push和Replace两种情况去兼容业务<ul><li>Push 为从当前界面层叠关系</li><li>Replace 为清除当前UI栈</li></ul></li><li>Scene<br>   永不释放，在最底层</li></ul><p>在此层总最好兼顾到产品埋点的需求。</p><h2 id="核心玩法层"><a href="#核心玩法层" class="headerlink" title="核心玩法层"></a>核心玩法层</h2><p>此功能独立游戏UI外，需视情况处理与UI层的关系</p><h2 id="逻辑层"><a href="#逻辑层" class="headerlink" title="逻辑层"></a>逻辑层</h2><p>游戏中数据处理以及保存的地方</p><h2 id="通信层"><a href="#通信层" class="headerlink" title="通信层"></a>通信层</h2><p>与服务端通信的中间件，此功能主要用于收发消息以及收到消息后抛事件给需要用到此消息的UI和逻辑层处理。</p><h1 id="前期注意"><a href="#前期注意" class="headerlink" title="前期注意"></a>前期注意</h1><ul><li>所有读表字段通过专门函数去读取<br>  此项主要是为以后多语言化的东西留坑做准备，避免在战略需要时程序面临大量改动。</li><li>一些唯一Key值的集中管理<br>  主要避免Key值的重复导致出奇怪问题。</li><li>客户端本地逻辑和业务逻辑的拆离<br>  此项主要主要是为了实现亮点<ul><li>在服务端与客户端用相同语言开发的情况下提供逻辑的复用</li><li>为逻辑部分的单元测试提供可能性</li></ul></li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> 游戏 </tag>
+            
+            <tag> 框架 </tag>
+            
+            <tag> Lua </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>git note</title>
+      <link href="/2017/02/05/git-note/"/>
+      <url>/2017/02/05/git-note/</url>
+      <content type="html"><![CDATA[<h1 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h1><h2 id="使用git作为svn的版本管理工具"><a href="#使用git作为svn的版本管理工具" class="headerlink" title="使用git作为svn的版本管理工具"></a>使用git作为svn的版本管理工具</h2><h3 id="从svn地址获取clone仓库"><a href="#从svn地址获取clone仓库" class="headerlink" title="从svn地址获取clone仓库"></a>从svn地址获取clone仓库</h3><p>使用 git clone [svn仓库地址]<br>ps:如果不需要把svn所有文件修改记录down下来可以添加-r HEAD 参数再最后面，这样可以只clone下来最新的文件</p><h3 id="获取更新"><a href="#获取更新" class="headerlink" title="获取更新"></a>获取更新</h3><p>使用 git svn fetch</p><h3 id="合并远程分支代码到本地分枝"><a href="#合并远程分支代码到本地分枝" class="headerlink" title="合并远程分支代码到本地分枝"></a>合并远程分支代码到本地分枝</h3><p>使用 git svn rebase<br>ps: 其实当使用这个命令的时候git会自动从svn取下当前最新代码并合并到当前本地分支，所以无特殊情况使用此命令即可</p><h3 id="提交代码到svn"><a href="#提交代码到svn" class="headerlink" title="提交代码到svn"></a>提交代码到svn</h3><p>使用git svn dcommit<br>此命令会将本地所有提交一一提交到svn仓库，所以提交前最好先整理下本地提交</p><a id="more"></a><h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="切换svn地址"><a href="#切换svn地址" class="headerlink" title="切换svn地址"></a>切换svn地址</h2><p><a href="http://bit.ly/2jTvjw3" target="_blank" rel="noopener">参考链接</a></p><ul><li>Edit the svn-remote url URL in .git/config to point to the new domain name</li><li>Run git svn fetch - This needs to fetch at least one new revision from svn!</li><li>Change svn-remote url back to the original url</li><li>Run git svn rebase -l to do a local rebase (with the changes that came in with the last fetch operation)</li><li>Change svn-remote url back to the new url</li><li>Run git svn rebase should now work again!</li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> 版本管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
+    
+    <entry>
+      <title></title>
+      <link href="/404.html"/>
+      <url>/404.html</url>
+      <content type="html"><![CDATA[<!DOCTYPE HTML><html><head><meta name="generator" content="Hexo 3.8.0">  <meta http-equiv="content-type" content="text/html;charset=utf-8;">  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  <meta name="robots" content="all">  <meta name="robots" content="index,follow">  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css"></head><body>  <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页">  </script>  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script></body></html>]]></content>
+    </entry>
+    
+    <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+  
+</search>
