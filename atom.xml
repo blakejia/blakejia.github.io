@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-07T04:06:57.178Z</updated>
+  <updated>2019-03-23T15:39:54.225Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>linux内核升级</title>
+    <link href="http://yoursite.com/2019/03/23/linux%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/"/>
+    <id>http://yoursite.com/2019/03/23/linux内核升级/</id>
+    <published>2019-03-23T15:21:15.000Z</published>
+    <updated>2019-03-23T15:39:54.225Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;centos&quot;&gt;&lt;a href=&quot;#centos&quot; class=&quot;headerlink&quot; title=&quot;centos&quot;&gt;&lt;/a&gt;centos&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.jianshu.com/p/fdf6bb6c5b9c&quot; targe
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="内核" scheme="http://yoursite.com/tags/%E5%86%85%E6%A0%B8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>cocos flux 架构</title>
     <link href="http://yoursite.com/2018/06/04/cocos-flux-%E6%9E%B6%E6%9E%84/"/>
     <id>http://yoursite.com/2018/06/04/cocos-flux-架构/</id>
     <published>2018-06-04T03:36:52.000Z</published>
-    <updated>2019-03-07T04:06:57.178Z</updated>
+    <updated>2019-03-23T15:31:46.153Z</updated>
     
     <summary type="html">
     
@@ -58,9 +81,9 @@
     </summary>
     
     
-      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
-    
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
     
   </entry>
   
