@@ -318,6 +318,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/linux-bbr-开启/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Blake">
+      <meta itemprop="description" content="记录生活">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="log for life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/27/linux-bbr-开启/" class="post-title-link" itemprop="url">linux bbr 开启</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-03-27 00:37:10 / Modified: 00:38:39" itemprop="dateCreated datePublished" datetime="2019-03-27T00:37:10+08:00">2019-03-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2019/03/27/linux-bbr-开启/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/27/linux-bbr-开启/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="手动开启-BBR"><a href="#手动开启-BBR" class="headerlink" title="手动开启 BBR"></a>手动开启 BBR</h1><p>注意以下命令需要 root 权限，非 root 用户先执行 sudo su - 切换到 root 账户</p>
+<ul>
+<li>运行 uname -r 看看是不是内核 &gt;= 4.9，不是的话请先升级内核</li>
+<li><p>执行 lsmod | grep bbr，查看 BBR 模块是否启用，如果结果中没有 tcp_bbr 的话就先执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">modprobe tcp_bbr</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"tcp_bbr"</span> &gt;&gt; /etc/modules-load.d/modules.conf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行下命令开启设置 TCP 使用 BBR 发包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"net.core.default_qdisc=fq"</span> &gt;&gt; /etc/sysctl.conf</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"net.ipv4.tcp_congestion_control=bbr"</span> &gt;&gt; /etc/sysctl.conf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保存生效 sysctl -p</p>
+</li>
+<li>验证 BBR 是否已经启用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br><span class="line">sysctl net.ipv4.tcp_congestion_control</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果结果都有bbr, 则证明你的内核已开启bbr</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/linux内核升级/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1920,7 +2090,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1971,7 +2141,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

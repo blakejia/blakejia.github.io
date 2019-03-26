@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-23T15:56:17.781Z</updated>
+  <updated>2019-03-26T16:38:39.387Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux bbr 开启</title>
+    <link href="http://yoursite.com/2019/03/27/linux-bbr-%E5%BC%80%E5%90%AF/"/>
+    <id>http://yoursite.com/2019/03/27/linux-bbr-开启/</id>
+    <published>2019-03-26T16:37:10.000Z</published>
+    <updated>2019-03-26T16:38:39.387Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;手动开启-BBR&quot;&gt;&lt;a href=&quot;#手动开启-BBR&quot; class=&quot;headerlink&quot; title=&quot;手动开启 BBR&quot;&gt;&lt;/a&gt;手动开启 BBR&lt;/h1&gt;&lt;p&gt;注意以下命令需要 root 权限，非 root 用户先执行 sudo su - 切换到 ro
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="bbr" scheme="http://yoursite.com/tags/bbr/"/>
+    
+      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>linux内核升级</title>
