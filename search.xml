@@ -3,6 +3,25 @@
   
     
     <entry>
+      <title>ssh 升级ed25519</title>
+      <link href="/2019/05/18/ssh-%E5%8D%87%E7%BA%A7ed25519/"/>
+      <url>/2019/05/18/ssh-%E5%8D%87%E7%BA%A7ed25519/</url>
+      <content type="html"><![CDATA[<h1 id="ssh-升级ed25519"><a href="#ssh-升级ed25519" class="headerlink" title="ssh 升级ed25519"></a>ssh 升级ed25519</h1><h2 id="ECC-介绍"><a href="#ECC-介绍" class="headerlink" title="ECC 介绍"></a>ECC 介绍</h2><p><a href="https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54" target="_blank" rel="noopener">参考</a></p><blockquote><p>在ed25519 68位加密的情况下，安全性可以跟RSA 544~3072的长度相当</p></blockquote><p><a href="https://toutyrater.github.io/advanced/tls.html" target="_blank" rel="noopener">参考</a></p><blockquote><p>证书有两种，一种是 ECC 证书（内置公钥是 ECDSA 公钥），一种是 RSA 证书（内置 RSA 公钥）。简单来说，同等长度 ECC 比 RSA 更安全,也就是说在具有同样安全性的情况下，ECC 的密钥长度比 RSA 短得多（加密解密会更快）。但问题是 ECC 的兼容性会差一些，Android 4.x 以下和 Windows XP 不支持。只要您的设备不是非常老的老古董，强烈建议使用 ECC 证书。</p></blockquote><p><strong> 当然重点是ed25519 更快 </strong> </p><a id="more"></a><h2 id="升级操作"><a href="#升级操作" class="headerlink" title="升级操作"></a>升级操作</h2><ol><li><p>首先生成新的密钥公钥</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-keygen -o -a 128 -t ed25519 -f ~/.ssh/id_ed25519 -C <span class="string">"yourmail@example.com"</span></span><br></pre></td></tr></table></figure></li><li><p>然后修改~/.ssh/config</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    Hostname github.com</span><br><span class="line">    Port 22</span><br><span class="line">    IdentityFile ~/.ssh/id_ed25519</span><br><span class="line">    IdentityFile ~/.ssh/***  <span class="comment"># 此处修改为老密钥，做兼容</span></span><br></pre></td></tr></table></figure><ol start="3"><li><p>上传新的公钥至服务器或git服务商</p></li><li><p>注意<br>目前测试github、coding都支持,ed25519 是openssh 6.5 才支持的。如果版本不够，请升级下openSSH版本。<br><strong> openSSH 升级请确保自己升级后能进入系统 🐶 </strong></p></li></ol>]]></content>
+      
+      
+        <tags>
+            
+            <tag> ssh </tag>
+            
+            <tag> rsa </tag>
+            
+            <tag> ed25519 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>linux bbr 开启</title>
       <link href="/2019/03/27/linux-bbr-%E5%BC%80%E5%90%AF/"/>
       <url>/2019/03/27/linux-bbr-%E5%BC%80%E5%90%AF/</url>
@@ -189,16 +208,16 @@
     </entry>
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     

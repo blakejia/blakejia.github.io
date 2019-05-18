@@ -96,16 +96,18 @@
 
 
 
-  <meta name="description" content="记录生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="log for life">
-<meta property="og:url" content="http://yoursite.com/archives/2018/06/index.html">
+  <meta name="description" content="ssh 升级ed25519ECC 介绍参考  在ed25519 68位加密的情况下，安全性可以跟RSA 544~3072的长度相当  参考  证书有两种，一种是 ECC 证书（内置公钥是 ECDSA 公钥），一种是 RSA 证书（内置 RSA 公钥）。简单来说，同等长度 ECC 比 RSA 更安全,也就是说在具有同样安全性的情况下，ECC 的密钥长度比 RSA 短得多（加密解密会更快）。但问题是">
+<meta name="keywords" content="ssh,rsa,ed25519">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ssh 升级ed25519">
+<meta property="og:url" content="http://yoursite.com/2019/05/18/ssh-升级ed25519/index.html">
 <meta property="og:site_name" content="log for life">
-<meta property="og:description" content="记录生活">
+<meta property="og:description" content="ssh 升级ed25519ECC 介绍参考  在ed25519 68位加密的情况下，安全性可以跟RSA 544~3072的长度相当  参考  证书有两种，一种是 ECC 证书（内置公钥是 ECDSA 公钥），一种是 RSA 证书（内置 RSA 公钥）。简单来说，同等长度 ECC 比 RSA 更安全,也就是说在具有同样安全性的情况下，ECC 的密钥长度比 RSA 短得多（加密解密会更快）。但问题是">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-18T09:26:22.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="log for life">
-<meta name="twitter:description" content="记录生活">
+<meta name="twitter:title" content="ssh 升级ed25519">
+<meta name="twitter:description" content="ssh 升级ed25519ECC 介绍参考  在ed25519 68位加密的情况下，安全性可以跟RSA 544~3072的长度相当  参考  证书有两种，一种是 ECC 证书（内置公钥是 ECDSA 公钥），一种是 RSA 证书（内置 RSA 公钥）。简单来说，同等长度 ECC 比 RSA 更安全,也就是说在具有同样安全性的情况下，ECC 的密钥长度比 RSA 短得多（加密解密会更快）。但问题是">
 
 
 
@@ -114,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/06/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/18/ssh-升级ed25519/">
 
 
 
@@ -124,7 +126,7 @@
   };
 </script>
 
-  <title>Archive | log for life</title>
+  <title>ssh 升级ed25519 | log for life</title>
   
 
 
@@ -183,7 +185,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -255,7 +257,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -297,168 +299,225 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/18/ssh-升级ed25519/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Blake">
+      <meta itemprop="description" content="记录生活">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="log for life">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">ssh 升级ed25519
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-18 17:10:38 / Modified: 17:26:22" itemprop="dateCreated datePublished" datetime="2019-05-18T17:10:38+08:00">2019-05-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        Um..! 11 posts in total. Keep on posting.
-      </span>
-      
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2018/06/04/cocos-flux-架构/" itemprop="url">
             
-              <span itemprop="name">cocos flux 架构</span>
             
-          </a>
-        
-      </h2>
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2019/05/18/ssh-升级ed25519/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/18/ssh-升级ed25519/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-06-04T11:36:52+08:00" content="2018-06-04">
-          06-04
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2018/06/01/git-hook-环境变量/" itemprop="url">
-            
-              <span itemprop="name">git hook 环境变量</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-06-01T20:50:04+08:00" content="2018-06-01">
-          06-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2018/06/01/用Docker-搭建V2Ray/" itemprop="url">
-            
-              <span itemprop="name">用Docker 搭建V2Ray</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-06-01T20:46:03+08:00" content="2018-06-01">
-          06-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h1 id="ssh-升级ed25519"><a href="#ssh-升级ed25519" class="headerlink" title="ssh 升级ed25519"></a>ssh 升级ed25519</h1><h2 id="ECC-介绍"><a href="#ECC-介绍" class="headerlink" title="ECC 介绍"></a>ECC 介绍</h2><p><a href="https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54" target="_blank" rel="noopener">参考</a></p>
+<blockquote>
+<p>在ed25519 68位加密的情况下，安全性可以跟RSA 544~3072的长度相当</p>
+</blockquote>
+<p><a href="https://toutyrater.github.io/advanced/tls.html" target="_blank" rel="noopener">参考</a></p>
+<blockquote>
+<p>证书有两种，一种是 ECC 证书（内置公钥是 ECDSA 公钥），一种是 RSA 证书（内置 RSA 公钥）。简单来说，同等长度 ECC 比 RSA 更安全,也就是说在具有同样安全性的情况下，ECC 的密钥长度比 RSA 短得多（加密解密会更快）。但问题是 ECC 的兼容性会差一些，Android 4.x 以下和 Windows XP 不支持。只要您的设备不是非常老的老古董，强烈建议使用 ECC 证书。</p>
+</blockquote>
+<p><strong> 当然重点是ed25519 更快 </strong> </p>
+<a id="more"></a>
+<h2 id="升级操作"><a href="#升级操作" class="headerlink" title="升级操作"></a>升级操作</h2><ol>
+<li><p>首先生成新的密钥公钥</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-keygen -o -a 128 -t ed25519 -f ~/.ssh/id_ed25519 -C <span class="string">"yourmail@example.com"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后修改~/.ssh/config</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    Hostname github.com</span><br><span class="line">    Port 22</span><br><span class="line">    IdentityFile ~/.ssh/id_ed25519</span><br><span class="line">    IdentityFile ~/.ssh/***  <span class="comment"># 此处修改为老密钥，做兼容</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>上传新的公钥至服务器或git服务商</p>
+</li>
+<li><p>注意<br>目前测试github、coding都支持,ed25519 是openssh 6.5 才支持的。如果版本不够，请升级下openSSH版本。<br><strong> openSSH 升级请确保自己升级后能进入系统 🐶 </strong></p>
+</li>
+</ol>
 
       
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ssh/" rel="tag"># ssh</a>
+          
+            <a href="/tags/rsa/" rel="tag"># rsa</a>
+          
+            <a href="/tags/ed25519/" rel="tag"># ed25519</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/27/linux-bbr-开启/" rel="next" title="linux bbr 开启">
+                <i class="fa fa-chevron-left"></i> linux bbr 开启
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -478,8 +537,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -616,6 +684,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ssh-升级ed25519"><span class="nav-number">1.</span> <span class="nav-text">ssh 升级ed25519</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECC-介绍"><span class="nav-number">1.1.</span> <span class="nav-text">ECC 介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级操作"><span class="nav-number">1.2.</span> <span class="nav-text">升级操作</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -746,6 +831,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -759,9 +848,28 @@
   <script id="dsq-count-scr" src="https://1024-center.disqus.com/count.js" async></script>
 
 
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://yoursite.com/2019/05/18/ssh-升级ed25519/";
+    this.page.identifier = "2019/05/18/ssh-升级ed25519/";
+    this.page.title = 'ssh 升级ed25519';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://1024-center.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
 
 
 
+
+
+  
 
 
   

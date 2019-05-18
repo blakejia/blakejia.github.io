@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-26T16:38:39.387Z</updated>
+  <updated>2019-05-18T09:26:22.805Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ssh 升级ed25519</title>
+    <link href="http://yoursite.com/2019/05/18/ssh-%E5%8D%87%E7%BA%A7ed25519/"/>
+    <id>http://yoursite.com/2019/05/18/ssh-升级ed25519/</id>
+    <published>2019-05-18T09:10:38.000Z</published>
+    <updated>2019-05-18T09:26:22.805Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;ssh-升级ed25519&quot;&gt;&lt;a href=&quot;#ssh-升级ed25519&quot; class=&quot;headerlink&quot; title=&quot;ssh 升级ed25519&quot;&gt;&lt;/a&gt;ssh 升级ed25519&lt;/h1&gt;&lt;h2 id=&quot;ECC-介绍&quot;&gt;&lt;a href=&quot;#ECC-介绍&quot; class=&quot;headerlink&quot; title=&quot;ECC 介绍&quot;&gt;&lt;/a&gt;ECC 介绍&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在ed25519 68位加密的情况下，安全性可以跟RSA 544~3072的长度相当&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://toutyrater.github.io/advanced/tls.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;证书有两种，一种是 ECC 证书（内置公钥是 ECDSA 公钥），一种是 RSA 证书（内置 RSA 公钥）。简单来说，同等长度 ECC 比 RSA 更安全,也就是说在具有同样安全性的情况下，ECC 的密钥长度比 RSA 短得多（加密解密会更快）。但问题是 ECC 的兼容性会差一些，Android 4.x 以下和 Windows XP 不支持。只要您的设备不是非常老的老古董，强烈建议使用 ECC 证书。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt; 当然重点是ed25519 更快 &lt;/strong&gt; &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="ssh" scheme="http://yoursite.com/tags/ssh/"/>
+    
+      <category term="rsa" scheme="http://yoursite.com/tags/rsa/"/>
+    
+      <category term="ed25519" scheme="http://yoursite.com/tags/ed25519/"/>
+    
+  </entry>
   
   <entry>
     <title>linux bbr 开启</title>
