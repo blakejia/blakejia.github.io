@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="log for life">
 <meta property="og:description" content="ssh 升级ed25519ECC 介绍参考  在ed25519 68位加密的情况下，安全性可以跟RSA 544~3072的长度相当  参考  证书有两种，一种是 ECC 证书（内置公钥是 ECDSA 公钥），一种是 RSA 证书（内置 RSA 公钥）。简单来说，同等长度 ECC 比 RSA 更安全,也就是说在具有同样安全性的情况下，ECC 的密钥长度比 RSA 短得多（加密解密会更快）。但问题是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-18T09:26:22.805Z">
+<meta property="og:updated_time" content="2019-05-18T09:26:58.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh 升级ed25519">
 <meta name="twitter:description" content="ssh 升级ed25519ECC 介绍参考  在ed25519 68位加密的情况下，安全性可以跟RSA 544~3072的长度相当  参考  证书有两种，一种是 ECC 证书（内置公钥是 ECDSA 公钥），一种是 RSA 证书（内置 RSA 公钥）。简单来说，同等长度 ECC 比 RSA 更安全,也就是说在具有同样安全性的情况下，ECC 的密钥长度比 RSA 短得多（加密解密会更快）。但问题是">
@@ -362,7 +362,7 @@
                 
               
 
-              <time title="Created: 2019-05-18 17:10:38 / Modified: 17:26:22" itemprop="dateCreated datePublished" datetime="2019-05-18T17:10:38+08:00">2019-05-18</time>
+              <time title="Created: 2019-05-18 17:10:38 / Modified: 17:26:58" itemprop="dateCreated datePublished" datetime="2019-05-18T17:10:38+08:00">2019-05-18</time>
             
 
             
@@ -429,10 +429,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-keygen -o -a 128 -t ed25519 -f ~/.ssh/id_ed25519 -C <span class="string">"yourmail@example.com"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>然后修改~/.ssh/config</p>
-</li>
-</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    Hostname github.com</span><br><span class="line">    Port 22</span><br><span class="line">    IdentityFile ~/.ssh/id_ed25519</span><br><span class="line">    IdentityFile ~/.ssh/***  <span class="comment"># 此处修改为老密钥，做兼容</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
+</li>
 <li><p>上传新的公钥至服务器或git服务商</p>
 </li>
 <li><p>注意<br>目前测试github、coding都支持,ed25519 是openssh 6.5 才支持的。如果版本不够，请升级下openSSH版本。<br><strong> openSSH 升级请确保自己升级后能进入系统 🐶 </strong></p>
