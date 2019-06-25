@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-18T09:26:58.003Z</updated>
+  <updated>2019-06-25T13:46:36.472Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker 搭建测试Mysql Mongo</title>
+    <link href="http://yoursite.com/2019/06/25/docker-%E6%90%AD%E5%BB%BA%E6%B5%8B%E8%AF%95Mysql-Mongo/"/>
+    <id>http://yoursite.com/2019/06/25/docker-搭建测试Mysql-Mongo/</id>
+    <published>2019-06-25T13:40:44.000Z</published>
+    <updated>2019-06-25T13:46:36.472Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;mysql&quot;&gt;&lt;a href=&quot;#mysql&quot; class=&quot;headerlink&quot; title=&quot;mysql&quot;&gt;&lt;/a&gt;mysql&lt;/h1&gt;&lt;p&gt;值得注意的是,外部主机的IP地址是172.17.0.1, 限定IP地址登陆的时候要放行这个IP&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run -d --restart=always --name mariadb  -e MYSQL_ROOT_PASSWORD=123456 -v ~/xxx/mariadb:/var/lib/mysql -p 127.0.0.1:3306:3306 mariadb&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="mongo" scheme="http://yoursite.com/tags/mongo/"/>
+    
+      <category term="mariadb" scheme="http://yoursite.com/tags/mariadb/"/>
+    
+  </entry>
   
   <entry>
     <title>ssh 升级ed25519</title>
