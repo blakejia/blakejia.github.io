@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="log for life">
 <meta property="og:description" content="mysql值得注意的是,外部主机的IP地址是172.17.0.1, 限定IP地址登陆的时候要放行这个IP 1docker run -d --restart=always --name mariadb  -e MYSQL_ROOT_PASSWORD=123456 -v ~/xxx/mariadb:/var/lib/mysql -p 127.0.0.1:3306:3306 mariadb">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-25T13:51:02.506Z">
+<meta property="og:updated_time" content="2019-06-30T10:02:37.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker 搭建测试Mysql Mongo">
 <meta name="twitter:description" content="mysql值得注意的是,外部主机的IP地址是172.17.0.1, 限定IP地址登陆的时候要放行这个IP 1docker run -d --restart=always --name mariadb  -e MYSQL_ROOT_PASSWORD=123456 -v ~/xxx/mariadb:/var/lib/mysql -p 127.0.0.1:3306:3306 mariadb">
@@ -362,12 +362,24 @@
                 
               
 
-              <time title="Created: 2019-06-25 21:40:44 / Modified: 21:51:02" itemprop="dateCreated datePublished" datetime="2019-06-25T21:40:44+08:00">2019-06-25</time>
+              <time title="Created: 2019-06-25 21:40:44" itemprop="dateCreated datePublished" datetime="2019-06-25T21:40:44+08:00">2019-06-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-06-30 18:02:37" itemprop="dateModified" datetime="2019-06-30T18:02:37+08:00">2019-06-30</time>
               
             
           </span>
@@ -423,7 +435,7 @@
 <p>设置admin 权限</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">use admin</span><br><span class="line">db.createUser(&#123;</span><br><span class="line">    user: <span class="string">'admin'</span>,</span><br><span class="line">    <span class="built_in">pwd</span>: <span class="string">'admin'</span>,</span><br><span class="line">    roles: [&#123;role: <span class="string">'userAdminAnyDatabase'</span>, db: <span class="string">'admin'</span>&#125;]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>新建数据库和用户</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">use newDb</span><br><span class="line">db.createUser(&#123;</span><br><span class="line">    user: <span class="string">'user'</span>,</span><br><span class="line">    <span class="built_in">pwd</span>: <span class="string">'123456'</span>,</span><br><span class="line">    roles: [&#123;role: <span class="string">'userAdminAnyDatabase'</span>, db: <span class="string">'userDb'</span>&#125;]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">use newDb</span><br><span class="line">db.createUser(&#123;</span><br><span class="line">    user: <span class="string">'user'</span>,</span><br><span class="line">    <span class="built_in">pwd</span>: <span class="string">'123456'</span>,</span><br><span class="line">    roles: [&#123;role: <span class="string">'dbOwner'</span>, db: <span class="string">'userDb'</span>&#125;]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
       
     </div>
