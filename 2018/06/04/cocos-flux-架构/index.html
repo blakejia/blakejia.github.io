@@ -264,9 +264,9 @@
       </span>
         
       
-      <span class="post-meta-item-text">Disqus: </span>
+      <span class="post-meta-item-text">Valine: </span>
     
-    <a title="disqus" href="/2018/06/04/cocos-flux-架构/#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/04/cocos-flux-架构/" itemprop="commentCount"></span></a>
+    <a title="valine" href="/2018/06/04/cocos-flux-架构/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018/06/04/cocos-flux-架构/" itemprop="commentCount"></span></a>
   </span>
   
   
@@ -342,13 +342,7 @@
           </div>
           
     
-    
-  <div class="comments" id="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
+    <div class="comments" id="comments"></div>
   
 
         </div>
@@ -581,36 +575,29 @@
 
   
 
+
 <script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://1024-center.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  function disqus_config() {
-    this.page.url = "http://yoursite.com/2018/06/04/cocos-flux-架构/";
-    this.page.identifier = "2018/06/04/cocos-flux-架构/";
-    this.page.title = 'cocos flux 架构';};
-  function loadComments() {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://1024-center.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  }
-    window.addEventListener('load', loadComments, false);
-  
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: false,
+    appId: '3LUEvwMcnxxRhv0QWr25BJdy-MdYXbMMI',
+    appKey: 'F0vwf2wqWTwAp7PHLwuFRLaT',
+    placeholder: 'Thanks for your comment',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
 </script>
 
 </body>
