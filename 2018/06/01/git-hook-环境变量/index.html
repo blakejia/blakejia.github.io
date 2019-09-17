@@ -56,7 +56,7 @@
 </script>
 
   <meta name="description" content="Docker下安装的gogs git hook 执行时的环境变量123456789101112131415161718HOSTNAME=gogs-gogs1">
-<meta name="keywords" content="git,Docker">
+<meta name="keywords" content="Docker,git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git hook 环境变量">
 <meta property="og:url" content="http://yoursite.com/2018/06/01/git-hook-环境变量/index.html">
@@ -83,7 +83,7 @@
 </script>
 
   <title>git hook 环境变量 | log for life</title>
-  <meta name="generator" content="Hexo 3.8.0">
+  <meta name="generator" content="Hexo 3.9.0">
   
 
 
@@ -305,9 +305,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/git/" rel="tag"># git</a>
-            
               <a href="/tags/Docker/" rel="tag"># Docker</a>
+            
+              <a href="/tags/git/" rel="tag"># git</a>
             
           </div>
         
@@ -388,7 +388,9 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" src="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg" alt="Blake">
+    <img class="site-author-image" itemprop="image"
+      src="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg"
+      alt="Blake">
   <p class="site-author-name" itemprop="name">Blake</p>
   <div class="site-description" itemprop="description">记录生活</div>
 </div>
@@ -520,7 +522,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Blake</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.0</div>
 
@@ -547,18 +549,22 @@
         .then(({ results }) => {
           if (results.length > 0) {
             var counter = results[0];
+              leancloudSelector(url).innerText = counter.time + 1;
+            
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
               .then(response => response.json())
-              .then(() => {
-                leancloudSelector(url).innerText = counter.time + 1;
-              })
-            
               .catch(error => {
                 console.log('Failed to save visitor count', error);
               })
           } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
             
           }
         })
