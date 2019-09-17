@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>mysql 操作</title>
+      <link href="/2019/09/17/mysql-%E6%93%8D%E4%BD%9C/"/>
+      <url>/2019/09/17/mysql-%E6%93%8D%E4%BD%9C/</url>
+      <content type="html"><![CDATA[<h1 id="dump-数据库"><a href="#dump-数据库" class="headerlink" title="dump 数据库"></a>dump 数据库</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u[user] -p[password] [db] [filePath]</span><br></pre></td></tr></table></figure><h1 id="复制数据库"><a href="#复制数据库" class="headerlink" title="复制数据库"></a>复制数据库</h1><p>本地复制</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u[user] -p[password] [db] | mysql -h127.0.0.1 -u[user] -p[password] [db]</span><br></pre></td></tr></table></figure><p>本地中转 复制到远程</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh [root]@[ip] <span class="string">"mysqldump -u[user] -p[password] [db]"</span> | ssh -C [root]@[ip] <span class="string">"mysql -h127.0.0.1 -u[user] -p[password] [db]"</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+            <tag> ssh </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>docker 搭建测试Mysql Mongo</title>
       <link href="/2019/06/25/docker-%E6%90%AD%E5%BB%BA%E6%B5%8B%E8%AF%95Mysql-Mongo/"/>
       <url>/2019/06/25/docker-%E6%90%AD%E5%BB%BA%E6%B5%8B%E8%AF%95Mysql-Mongo/</url>
@@ -106,9 +123,9 @@
       
         <tags>
             
-            <tag> git </tag>
-            
             <tag> Docker </tag>
+            
+            <tag> git </tag>
             
         </tags>
       
