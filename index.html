@@ -159,7 +159,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/gitea-drone-%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
       <meta itemprop="name" content="Blake">
       <meta itemprop="description" content="记录生活">
     </span>
@@ -181,7 +181,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-01 13:09:14 / Modified: 13:43:49" itemprop="dateCreated datePublished" datetime="2020-06-01T13:09:14+08:00">2020-06-01</time>
+              <time title="Created: 2020-06-01 13:09:14 / Modified: 14:55:14" itemprop="dateCreated datePublished" datetime="2020-06-01T13:09:14+08:00">2020-06-01</time>
             </span>
 
           
@@ -215,15 +215,14 @@
 <p>We strongly recommend using postgres instead of mysql. The system has been optimized for features not found in mysql.</p>
 </blockquote>
 <p>所以，这里我们gitea同样也使用 Postgres 一个数据库搞定</p>
-<h1 id="Postgres"><a href="#Postgres" class="headerlink" title="Postgres"></a>Postgres</h1><p>这里我们注意将Postgres 的数据库做一个持久化存储，链接到本机<br>/XX/XX    /var/lib/postgresql/data</p>
-<p>以及设置环境变量POSTGRES_PASSWORD 和端口绑定<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name postgres -e POSTGRES_PASSWORD=&#123;yourpassword&#125; -v &#123;/XX/XX(本地路径)&#125;:/var/lib/postgresql/data -d -p &#123;yourport&#125;:5432 postgres</span><br></pre></td></tr></table></figure></p>
-<p>创建好后。创建gitea和drone使用的数据库（如果不闲麻烦，可以再为这两个数据库创建对应的用户）。</p>
-<h1 id="gitea"><a href="#gitea" class="headerlink" title="gitea"></a>gitea</h1><p>这里要注意的东西不多。docker配置的时候注意自己所对应的端口号,并且将对应数据仓库做一个持久化存储<br>/XX/XX    /data</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name=gitea -p &#123;ssh-port&#125;:22 -p &#123;http-port&#125;:3000 -v &#123;/XX/XX&#125;:/data gitea/gitea</span><br></pre></td></tr></table></figure>
-<p>创建完成后，属于对应的http 即可启动<br>进入设置页面后。数据库选择postgres,这里注意数据库的地址,可以填docker网关，172.17.0.1</p>
-<p>对应然后填写自己对应的域名，端口。端口部分除了内部服务的3000不用改，其他的端口均需改成docker对应映射的端口号</p>
-<p>附上app.ini配置文件<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">APP_NAME</span> = Gitea: Git with a cup of tea</span><br><span class="line"><span class="attr">RUN_MODE</span> = prod</span><br><span class="line"><span class="attr">RUN_USER</span> = git</span><br><span class="line"></span><br><span class="line"><span class="section">[repository]</span></span><br><span class="line"><span class="attr">ROOT</span> = /data/git/repositories</span><br><span class="line"></span><br><span class="line"><span class="section">[repository.local]</span></span><br><span class="line"><span class="attr">LOCAL_COPY_PATH</span> = /data/gitea/tmp/local-repo</span><br><span class="line"></span><br><span class="line"><span class="section">[repository.upload]</span></span><br><span class="line"><span class="attr">TEMP_PATH</span> = /data/gitea/uploads</span><br><span class="line"></span><br><span class="line"><span class="section">[server]</span></span><br><span class="line"><span class="attr">APP_DATA_PATH</span>    = /data/gitea</span><br><span class="line"><span class="attr">DOMAIN</span>           = &#123;域名&#125;</span><br><span class="line"><span class="attr">SSH_DOMAIN</span>       = &#123;域名&#125;</span><br><span class="line"><span class="attr">HTTP_PORT</span>        = <span class="number">3000</span></span><br><span class="line"><span class="attr">ROOT_URL</span>         = http://&#123;域名&#125;:&#123;http-port&#125;/</span><br><span class="line"><span class="attr">DISABLE_SSH</span>      = <span class="literal">false</span></span><br><span class="line"><span class="attr">SSH_PORT</span>         = &#123;ssh-port&#125;</span><br><span class="line"><span class="attr">SSH_LISTEN_PORT</span>  = <span class="number">22</span></span><br><span class="line"><span class="attr">LFS_START_SERVER</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">LFS_CONTENT_PATH</span> = /data/git/lfs</span><br><span class="line"><span class="attr">LFS_JWT_SECRET</span>   = &#123;XXXXX&#125;</span><br><span class="line"><span class="attr">OFFLINE_MODE</span>     = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="section">[database]</span></span><br><span class="line"><span class="attr">PATH</span>     = /data/gitea/gitea.db</span><br><span class="line"><span class="attr">DB_TYPE</span>  = postgres</span><br><span class="line"><span class="attr">HOST</span>     = &#123;HOST&#125;:&#123;PORT&#125;</span><br><span class="line"><span class="attr">NAME</span>     = &#123;DATABASE_NAME&#125;</span><br><span class="line"><span class="attr">USER</span>     = &#123;user&#125;</span><br><span class="line"><span class="attr">PASSWD</span>   = &#123;password&#125;</span><br><span class="line"><span class="attr">SCHEMA</span>   = </span><br><span class="line"><span class="attr">SSL_MODE</span> = disable</span><br><span class="line"><span class="attr">CHARSET</span>  = utf8</span><br><span class="line"></span><br><span class="line"><span class="section">[indexer]</span></span><br><span class="line"><span class="attr">ISSUE_INDEXER_PATH</span> = /data/gitea/indexers/issues.bleve</span><br><span class="line"></span><br><span class="line"><span class="section">[session]</span></span><br><span class="line"><span class="attr">PROVIDER_CONFIG</span> = /data/gitea/sessions</span><br><span class="line"><span class="attr">PROVIDER</span>        = file</span><br><span class="line"></span><br><span class="line"><span class="section">[picture]</span></span><br><span class="line"><span class="attr">AVATAR_UPLOAD_PATH</span>            = /data/gitea/avatars</span><br><span class="line"><span class="attr">REPOSITORY_AVATAR_UPLOAD_PATH</span> = /data/gitea/repo-avatars</span><br><span class="line"><span class="attr">DISABLE_GRAVATAR</span>              = <span class="literal">false</span></span><br><span class="line"><span class="attr">ENABLE_FEDERATED_AVATAR</span>       = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="section">[attachment]</span></span><br><span class="line"><span class="attr">ENABLED</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">PATH</span> = /data/gitea/attachments</span><br><span class="line"><span class="attr">ALLOWED_TYPES</span> = */*</span><br><span class="line"><span class="attr">MAX_SIZE</span> = <span class="number">100</span></span><br><span class="line"><span class="attr">MAX_FILES</span> = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="section">[log]</span></span><br><span class="line"><span class="attr">ROOT_PATH</span> = /data/gitea/log</span><br><span class="line"><span class="attr">MODE</span>      = file</span><br><span class="line"><span class="attr">LEVEL</span>     = info</span><br><span class="line"></span><br><span class="line"><span class="section">[security]</span></span><br><span class="line"><span class="attr">INSTALL_LOCK</span>   = <span class="literal">true</span></span><br><span class="line"><span class="attr">SECRET_KEY</span>     = &#123;XXXX&#125;</span><br><span class="line"><span class="attr">INTERNAL_TOKEN</span> = &#123;XXXX&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">[service]</span></span><br><span class="line"><span class="attr">DISABLE_REGISTRATION</span>              = <span class="literal">true</span></span><br><span class="line"><span class="attr">REQUIRE_SIGNIN_VIEW</span>               = <span class="literal">true</span></span><br><span class="line"><span class="attr">REGISTER_EMAIL_CONFIRM</span>            = <span class="literal">false</span></span><br><span class="line"><span class="attr">ENABLE_NOTIFY_MAIL</span>                = <span class="literal">true</span></span><br><span class="line"><span class="attr">ALLOW_ONLY_EXTERNAL_REGISTRATION</span>  = <span class="literal">false</span></span><br><span class="line"><span class="attr">ENABLE_CAPTCHA</span>                    = <span class="literal">false</span></span><br><span class="line"><span class="attr">DEFAULT_KEEP_EMAIL_PRIVATE</span>        = <span class="literal">false</span></span><br><span class="line"><span class="attr">DEFAULT_ALLOW_CREATE_ORGANIZATION</span> = <span class="literal">false</span></span><br><span class="line"><span class="attr">DEFAULT_ENABLE_TIMETRACKING</span>       = <span class="literal">true</span></span><br><span class="line"><span class="attr">NO_REPLY_ADDRESS</span>                  = noreply.localhost</span><br><span class="line"></span><br><span class="line"><span class="section">[oauth2]</span></span><br><span class="line"><span class="attr">JWT_SECRET</span> = &#123;XXXXX&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">[mailer]</span></span><br><span class="line"><span class="attr">ENABLED</span>        = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="section">[openid]</span></span><br><span class="line"><span class="attr">ENABLE_OPENID_SIGNIN</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">ENABLE_OPENID_SIGNUP</span> = <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/01/gitea-drone-%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -245,7 +244,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/17/mysql-%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
       <meta itemprop="name" content="Blake">
       <meta itemprop="description" content="记录生活">
     </span>
@@ -322,7 +321,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/25/docker-%E6%90%AD%E5%BB%BA%E6%B5%8B%E8%AF%95Mysql-Mongo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
       <meta itemprop="name" content="Blake">
       <meta itemprop="description" content="记录生活">
     </span>
@@ -409,7 +408,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/18/ssh-%E5%8D%87%E7%BA%A7ed25519/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
       <meta itemprop="name" content="Blake">
       <meta itemprop="description" content="记录生活">
     </span>
@@ -497,7 +496,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/linux-bbr-%E5%BC%80%E5%90%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
       <meta itemprop="name" content="Blake">
       <meta itemprop="description" content="记录生活">
     </span>
@@ -578,7 +577,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/linux%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
       <meta itemprop="name" content="Blake">
       <meta itemprop="description" content="记录生活">
     </span>
@@ -659,7 +658,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/cocos-flux-%E6%9E%B6%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
       <meta itemprop="name" content="Blake">
       <meta itemprop="description" content="记录生活">
     </span>
@@ -739,7 +738,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/git-hook-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
       <meta itemprop="name" content="Blake">
       <meta itemprop="description" content="记录生活">
     </span>
@@ -826,7 +825,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/%E7%94%A8Docker-%E6%90%AD%E5%BB%BAV2Ray/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
       <meta itemprop="name" content="Blake">
       <meta itemprop="description" content="记录生活">
     </span>
@@ -912,7 +911,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/05/python%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
       <meta itemprop="name" content="Blake">
       <meta itemprop="description" content="记录生活">
     </span>
@@ -1047,6 +1046,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Blake"
+      src="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
   <p class="site-author-name" itemprop="name">Blake</p>
   <div class="site-description" itemprop="description">记录生活</div>
 </div>
