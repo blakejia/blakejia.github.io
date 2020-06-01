@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-17T06:30:22.924Z</updated>
+  <updated>2020-06-01T05:43:49.636Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>gitea + drone 群晖搭建</title>
+    <link href="http://yoursite.com/2020/06/01/gitea-drone-%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA/"/>
+    <id>http://yoursite.com/2020/06/01/gitea-drone-群晖搭建/</id>
+    <published>2020-06-01T05:09:14.000Z</published>
+    <updated>2020-06-01T05:43:49.636Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;近日将DS214play 淘汰换成 DS216+ii，终于可以docker愉快的玩耍&lt;/p&gt;
+&lt;p&gt;这里选用数据库用PostgreSql,Drone 的原话是&lt;a href=&quot;https://docs.drone.io/server/storage/database/&quot; t
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="drone" scheme="http://yoursite.com/tags/drone/"/>
+    
+      <category term="群晖" scheme="http://yoursite.com/tags/%E7%BE%A4%E6%99%96/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql 操作</title>
