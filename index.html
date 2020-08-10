@@ -156,6 +156,95 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/28/eth-rpc-%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
+      <meta itemprop="name" content="Blake">
+      <meta itemprop="description" content="记录生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="log for life">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/28/eth-rpc-%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">eth rpc 搭建</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-28 22:27:35" itemprop="dateCreated datePublished" datetime="2020-07-28T22:27:35+08:00">2020-07-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-10 10:18:31" itemprop="dateModified" datetime="2020-08-10T10:18:31+08:00">2020-08-10</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/07/28/eth-rpc-%E6%90%AD%E5%BB%BA/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/28/eth-rpc-%E6%90%AD%E5%BB%BA/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="同步-rpc"><a href="#同步-rpc" class="headerlink" title="同步 + rpc"></a>同步 + rpc</h1><ul>
+<li><p>http</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">geth --datadir /mnt/eth/data --rpc --rpcaddr 0.0.0.0 --rpcport 28545 --rpcapi personal???db,eth,net,web3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ws</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">geth --datadir ./geth-data --dev --ws --ws.port 13334 --ws.api eth,net,web3,miner,personal --verbosity 3</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>--dev</code> 开发模式<br><code>--allow-insecure-unlock</code> 允许本地解锁，线上需关闭<br><code>--verbosity 3</code> 日志等级 默认3</p>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">geth attach ./geth-data/geth.ipc</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> eth.accouts // 查看账户</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> eth.accouts[0] // 查看特定钱包地址</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> eth.getBalance(eth.accounts[0]) // 查询eth 余额</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> eth.sendTransaction(&#123;from: eth.accounts[0] , to: eth.accounts[1], value: web3.toWei(10, <span class="string">"ether"</span>)&#125;) // 转账</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> eth.blockNumber // 查询区块高度</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> personal.newAccount(<span class="string">"password"</span>) //创建用户</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> miner.start() //开始当前用户挖矿</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> miner.stop() //停止当前用户挖矿</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> eth.getTransaction(<span class="string">"txid"</span>) // 根据txID查询交易</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> eth.getTransactionReceipt(<span class="string">"txid"</span>) //根据txID 查询交易结果</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/gitea-drone-%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -904,87 +993,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/05/python%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
-      <meta itemprop="name" content="Blake">
-      <meta itemprop="description" content="记录生活">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="log for life">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/06/05/python%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">python笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2017-06-05 11:12:31" itemprop="dateCreated datePublished" datetime="2017-06-05T11:12:31+08:00">2017-06-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-03-07 12:06:57" itemprop="dateModified" datetime="2019-03-07T12:06:57+08:00">2019-03-07</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2017/06/05/python%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2017/06/05/python%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="序列类型"><a href="#序列类型" class="headerlink" title="序列类型"></a>序列类型</h1><p>6种：列表、元组、字符串、Unicode字符串、buffer对象、xrange对象</p>
-<h2 id="列表（list）"><a href="#列表（list）" class="headerlink" title="列表（list）"></a>列表（list）</h2><h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"a"</span> + <span class="string">"b"</span> <span class="comment"># &gt;&gt;&gt; ab</span></span><br><span class="line"></span><br><span class="line"><span class="string">"ab"</span> * <span class="number">2</span> <span class="comment"># &gt;&gt;&gt; abab</span></span><br><span class="line">[<span class="literal">None</span>] * <span class="number">10</span> <span class="comment"># &gt;&gt;&gt; [None, None, None ... None]</span></span><br><span class="line"></span><br><span class="line"><span class="string">"p"</span> <span class="keyword">in</span> <span class="string">"python"</span> <span class="comment"># 检测是否包含 return Ture or False</span></span><br><span class="line"></span><br><span class="line">numbers = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">3</span>]</span><br><span class="line">len(numbers) <span class="comment"># 3</span></span><br><span class="line">max(numbers) <span class="comment"># 5</span></span><br><span class="line">min(numbers) <span class="comment"># 1</span></span><br><span class="line"></span><br><span class="line">list(<span class="string">"Hello"</span>) <span class="comment"># ["H", "e", "l", "l", "o"]</span></span><br><span class="line"></span><br><span class="line">numbers[<span class="number">1</span>] = <span class="number">20</span> <span class="comment"># 赋值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> numbers[<span class="number">0</span>] <span class="comment"># 删除首个元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分片操作</span></span><br><span class="line">data[start:end:interval]</span><br><span class="line"><span class="comment"># start：起始位置（省略代表开始） end：结束位置（省略代表到结束） interval：步长（不为0，正数从左到有，负数从又到左）</span></span><br><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">numbers[<span class="number">1</span>: <span class="number">4</span>] = [] <span class="comment"># numbers 值为 [1, 5]</span></span><br><span class="line"></span><br><span class="line">numbers.append(<span class="number">2</span>) <span class="comment"># numbers 值为 [1, 5, 2]</span></span><br><span class="line"></span><br><span class="line">numbers.count(<span class="number">1</span>) <span class="comment"># 统计参数在数组中出现次数</span></span><br><span class="line"></span><br><span class="line">numbers.extend([<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]) <span class="comment"># numbers 值为[1, 5, 2, 3, 4, 5]</span></span><br><span class="line"></span><br><span class="line">numbers.index(<span class="number">3</span>) <span class="comment"># 查找元素位置</span></span><br><span class="line">numbers.pop(<span class="number">0</span>) <span class="comment"># 弹出首个值(修改了原数组)</span></span><br><span class="line">numbers.reverse() <span class="comment"># 反转列表</span></span><br><span class="line">numbers.sort() <span class="comment"># 排序</span></span><br></pre></td></tr></table></figure>
-<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>不可修改<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">a = (<span class="number">1</span>, )</span><br><span class="line">a = tuple([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]) <span class="comment"># a 为 (1, 2, 3)</span></span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1056,7 +1064,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
