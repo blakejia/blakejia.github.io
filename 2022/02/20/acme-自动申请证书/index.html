@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="log for life">
 <meta property="og:description" content="ACME 自动申请及管理证书安装acme.sh执行以下命令，acme.sh 会安装到 ~&#x2F;.acme.sh 目录下。 1234567891011121314151617181920curl  https:&#x2F;&#x2F;get.acme.sh | sh% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current">
 <meta property="article:published_time" content="2022-02-20T06:37:44.000Z">
-<meta property="article:modified_time" content="2022-02-20T06:48:46.418Z">
+<meta property="article:modified_time" content="2022-02-20T06:58:15.397Z">
 <meta property="article:author" content="Blake">
 <meta property="article:tag" content="tls">
 <meta property="article:tag" content="ecc">
@@ -186,7 +186,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-02-20 14:37:44 / Modified: 14:48:46" itemprop="dateCreated datePublished" datetime="2022-02-20T14:37:44+08:00">2022-02-20</time>
+              <time title="Created: 2022-02-20 14:37:44 / Modified: 14:58:15" itemprop="dateCreated datePublished" datetime="2022-02-20T14:37:44+08:00">2022-02-20</time>
             </span>
 
           
@@ -234,6 +234,7 @@
 <p>RSA 证书<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --installcert -d mydomain.me --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key</span><br></pre></td></tr></table></figure><br>注意：无论什么情况，密钥(即上面的v2ray.key)都不能泄漏，如果你不幸泄漏了密钥，可以使用 acme.sh 将原证书吊销，再生成新的证书，吊销方法请自行参考 acme.sh 的手册</p>
 <p>如果更新完证书后需要自动重启服务，则需添加<code>--reloadcmd  &quot;nginx -s reload&quot;</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --installcert -d mydomain.me --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc --reloadcmd <span class="string">"service xxx restart"</span></span><br></pre></td></tr></table></figure>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>操作完成部署后，可以在此网站进行tls 部署验证<br><a href="https://www.ssllabs.com/ssltest/index.html" target="_blank" rel="noopener">https://www.ssllabs.com/ssltest/index.html</a></p>
 
     </div>
 
@@ -317,7 +318,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ACME-自动申请及管理证书"><span class="nav-number">1.</span> <span class="nav-text">ACME 自动申请及管理证书</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装acme-sh"><span class="nav-number">1.1.</span> <span class="nav-text">安装acme.sh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-acme-sh-生成证书及更新"><span class="nav-number">1.2.</span> <span class="nav-text">使用 acme.sh 生成证书及更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成证书"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#证书更新"><span class="nav-number">1.2.2.</span> <span class="nav-text">证书更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装证书"><span class="nav-number">1.3.</span> <span class="nav-text">安装证书</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ACME-自动申请及管理证书"><span class="nav-number">1.</span> <span class="nav-text">ACME 自动申请及管理证书</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装acme-sh"><span class="nav-number">1.1.</span> <span class="nav-text">安装acme.sh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-acme-sh-生成证书及更新"><span class="nav-number">1.2.</span> <span class="nav-text">使用 acme.sh 生成证书及更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成证书"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#证书更新"><span class="nav-number">1.2.2.</span> <span class="nav-text">证书更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装证书"><span class="nav-number">1.3.</span> <span class="nav-text">安装证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证"><span class="nav-number">1.4.</span> <span class="nav-text">验证</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
