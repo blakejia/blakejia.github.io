@@ -20,20 +20,21 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="dump 数据库1mysqldump -u[user] -p[password] [db] [filePath] 复制数据库本地复制 1mysqldump -u[user] -p[password] [db] | mysql -h127.0.0.1 -u[user] -p[password] [db] 本地中转 复制到远程 1ssh [root]@[ip] &quot;mysqldump -u[user]">
+  <meta name="description" content="ACME 自动申请及管理证书安装acme.sh执行以下命令，acme.sh 会安装到 ~&#x2F;.acme.sh 目录下。 1234567891011121314151617181920curl  https:&#x2F;&#x2F;get.acme.sh | sh% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql 操作">
-<meta property="og:url" content="http://yoursite.com/2019/09/17/mysql-%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:title" content="acme 自动申请证书">
+<meta property="og:url" content="http://yoursite.com/2022/02/20/acme-%E8%87%AA%E5%8A%A8%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6/index.html">
 <meta property="og:site_name" content="log for life">
-<meta property="og:description" content="dump 数据库1mysqldump -u[user] -p[password] [db] [filePath] 复制数据库本地复制 1mysqldump -u[user] -p[password] [db] | mysql -h127.0.0.1 -u[user] -p[password] [db] 本地中转 复制到远程 1ssh [root]@[ip] &quot;mysqldump -u[user]">
-<meta property="article:published_time" content="2019-09-17T06:25:01.000Z">
-<meta property="article:modified_time" content="2019-09-17T06:30:22.924Z">
+<meta property="og:description" content="ACME 自动申请及管理证书安装acme.sh执行以下命令，acme.sh 会安装到 ~&#x2F;.acme.sh 目录下。 1234567891011121314151617181920curl  https:&#x2F;&#x2F;get.acme.sh | sh% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current">
+<meta property="article:published_time" content="2022-02-20T06:37:44.000Z">
+<meta property="article:modified_time" content="2022-02-20T06:48:46.418Z">
 <meta property="article:author" content="Blake">
-<meta property="article:tag" content="mysql">
-<meta property="article:tag" content="ssh">
+<meta property="article:tag" content="tls">
+<meta property="article:tag" content="ecc">
+<meta property="article:tag" content="auto renew">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/09/17/mysql-%E6%93%8D%E4%BD%9C/">
+<link rel="canonical" href="http://yoursite.com/2022/02/20/acme-%E8%87%AA%E5%8A%A8%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6/">
 
 
 <script id="page-configurations">
@@ -46,7 +47,7 @@
   };
 </script>
 
-  <title>mysql 操作 | log for life</title>
+  <title>acme 自动申请证书 | log for life</title>
   
 
 
@@ -161,7 +162,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/17/mysql-%E6%93%8D%E4%BD%9C/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/02/20/acme-%E8%87%AA%E5%8A%A8%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
@@ -174,7 +175,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          mysql 操作
+          acme 自动申请证书
         </h1>
 
         <div class="post-meta">
@@ -185,7 +186,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-09-17 14:25:01 / Modified: 14:30:22" itemprop="dateCreated datePublished" datetime="2019-09-17T14:25:01+08:00">2019-09-17</time>
+              <time title="Created: 2022-02-20 14:37:44 / Modified: 14:48:46" itemprop="dateCreated datePublished" datetime="2022-02-20T14:37:44+08:00">2022-02-20</time>
             </span>
 
           
@@ -197,8 +198,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2019/09/17/mysql-%E6%93%8D%E4%BD%9C/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/17/mysql-%E6%93%8D%E4%BD%9C/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/02/20/acme-%E8%87%AA%E5%8A%A8%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/02/20/acme-%E8%87%AA%E5%8A%A8%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -213,11 +214,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="dump-数据库"><a href="#dump-数据库" class="headerlink" title="dump 数据库"></a>dump 数据库</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u[user] -p[password] [db] [filePath]</span><br></pre></td></tr></table></figure>
-<h1 id="复制数据库"><a href="#复制数据库" class="headerlink" title="复制数据库"></a>复制数据库</h1><p>本地复制</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u[user] -p[password] [db] | mysql -h127.0.0.1 -u[user] -p[password] [db]</span><br></pre></td></tr></table></figure>
-<p>本地中转 复制到远程</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh [root]@[ip] <span class="string">"mysqldump -u[user] -p[password] [db]"</span> | ssh -C [root]@[ip] <span class="string">"mysql -h127.0.0.1 -u[user] -p[password] [db]"</span></span><br></pre></td></tr></table></figure>
+        <h1 id="ACME-自动申请及管理证书"><a href="#ACME-自动申请及管理证书" class="headerlink" title="ACME 自动申请及管理证书"></a>ACME 自动申请及管理证书</h1><h2 id="安装acme-sh"><a href="#安装acme-sh" class="headerlink" title="安装acme.sh"></a>安装acme.sh</h2><p>执行以下命令，acme.sh 会安装到 ~/.acme.sh 目录下。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">curl  https://get.acme.sh | sh</span><br><span class="line">% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span><br><span class="line">                               Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">100   671  100   671    0     0    680      0 --:--:-- --:--:-- --:--:--   679</span><br><span class="line">% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span><br><span class="line">                               Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">100  112k  100  112k    0     0   690k      0 --:--:-- --:--:-- --:--:--  693k</span><br><span class="line">[Fri 30 Dec 01:03:32 GMT 2016] Installing from online archive.</span><br><span class="line">[Fri 30 Dec 01:03:32 GMT 2016] Downloading https://github.com/Neilpang/acme.sh/archive/master.tar.gz</span><br><span class="line">[Fri 30 Dec 01:03:33 GMT 2016] Extracting master.tar.gz</span><br><span class="line">[Fri 30 Dec 01:03:33 GMT 2016] Installing to /home/user/.acme.sh</span><br><span class="line">[Fri 30 Dec 01:03:33 GMT 2016] Installed to /home/user/.acme.sh/acme.sh</span><br><span class="line">[Fri 30 Dec 01:03:33 GMT 2016] Installing <span class="built_in">alias</span> to <span class="string">'/home/user/.profile'</span></span><br><span class="line">[Fri 30 Dec 01:03:33 GMT 2016] OK, Close and reopen your terminal to start using acme.sh</span><br><span class="line">[Fri 30 Dec 01:03:33 GMT 2016] Installing cron job</span><br><span class="line">no crontab <span class="keyword">for</span> user</span><br><span class="line">no crontab <span class="keyword">for</span> user</span><br><span class="line">[Fri 30 Dec 01:03:33 GMT 2016] Good, bash is found, so change the shebang to use bash as preferred.</span><br><span class="line">[Fri 30 Dec 01:03:33 GMT 2016] OK</span><br><span class="line">[Fri 30 Dec 01:03:33 GMT 2016] Install success!</span><br></pre></td></tr></table></figure>
+<p>安装成功后执行 source ~/.bashrc 以确保脚本所设置的命令别名生效。</p>
+<p>如果安装报错，那么可能是因为系统缺少 acme.sh 所需要的依赖项，acme.sh 的依赖项主要是 netcat(nc)，我们通过以下命令来安装这些依赖项，然后重新安装一遍 acme.sh:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt -y install netcat socat</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="使用-acme-sh-生成证书及更新"><a href="#使用-acme-sh-生成证书及更新" class="headerlink" title="使用 acme.sh 生成证书及更新"></a>使用 acme.sh 生成证书及更新</h2><h3 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h3><p>执行以下命令生成证书：</p>
+<p>以下的命令会临时监听 80 端口，请确保执行该命令前 80 端口没有使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --issue -d mydomain.me --standalone -k ec-256</span><br></pre></td></tr></table></figure>
+<p><code>-k</code> 表示密钥长度，后面的值可以是 ec-256 、ec-384、2048、3072、4096、8192，带有 ec 表示生成的是 ECC 证书，没有则是 RSA 证书。在安全性上 256 位的 ECC 证书等同于 3072 位的 RSA 证书。</p>
+<h3 id="证书更新"><a href="#证书更新" class="headerlink" title="证书更新"></a>证书更新</h3><p>证书更新<br>由于 Let’s Encrypt 的证书有效期只有 3 个月，因此需要 90 天至少要更新一次证书，acme.sh 脚本会每 60 天自动更新证书。也可以手动更新。</p>
+<p>手动更新 ECC 证书，执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --renew -d mydomain.com --force --ecc</span><br></pre></td></tr></table></figure>
+<p>如果是 RSA 证书则执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --renew -d mydomain.com --force</span><br></pre></td></tr></table></figure>
+<h2 id="安装证书"><a href="#安装证书" class="headerlink" title="安装证书"></a>安装证书</h2><p>ECC 证书</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --installcert -d mydomain.me --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc</span><br></pre></td></tr></table></figure>
+<p>RSA 证书<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --installcert -d mydomain.me --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key</span><br></pre></td></tr></table></figure><br>注意：无论什么情况，密钥(即上面的v2ray.key)都不能泄漏，如果你不幸泄漏了密钥，可以使用 acme.sh 将原证书吊销，再生成新的证书，吊销方法请自行参考 acme.sh 的手册</p>
+<p>如果更新完证书后需要自动重启服务，则需添加<code>--reloadcmd  &quot;nginx -s reload&quot;</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --installcert -d mydomain.me --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc --reloadcmd <span class="string">"service xxx restart"</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -227,8 +243,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/mysql/" rel="tag"># mysql</a>
-              <a href="/tags/ssh/" rel="tag"># ssh</a>
+              <a href="/tags/tls/" rel="tag"># tls</a>
+              <a href="/tags/ecc/" rel="tag"># ecc</a>
+              <a href="/tags/auto-renew/" rel="tag"># auto renew</a>
           </div>
 
         
@@ -237,13 +254,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/06/25/docker-%E6%90%AD%E5%BB%BA%E6%B5%8B%E8%AF%95Mysql-Mongo/" rel="prev" title="docker 搭建测试Mysql Mongo">
-      <i class="fa fa-chevron-left"></i> docker 搭建测试Mysql Mongo
+    <a href="/2020/07/28/eth-rpc-%E6%90%AD%E5%BB%BA/" rel="prev" title="eth rpc 搭建">
+      <i class="fa fa-chevron-left"></i> eth rpc 搭建
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/06/01/gitea-drone-%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA/" rel="next" title="gitea + drone 群晖搭建">
-      gitea + drone 群晖搭建 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -303,7 +317,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#dump-数据库"><span class="nav-number">1.</span> <span class="nav-text">dump 数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复制数据库"><span class="nav-number">2.</span> <span class="nav-text">复制数据库</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ACME-自动申请及管理证书"><span class="nav-number">1.</span> <span class="nav-text">ACME 自动申请及管理证书</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装acme-sh"><span class="nav-number">1.1.</span> <span class="nav-text">安装acme.sh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-acme-sh-生成证书及更新"><span class="nav-number">1.2.</span> <span class="nav-text">使用 acme.sh 生成证书及更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成证书"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#证书更新"><span class="nav-number">1.2.2.</span> <span class="nav-text">证书更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装证书"><span class="nav-number">1.3.</span> <span class="nav-text">安装证书</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
