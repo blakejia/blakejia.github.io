@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>xcode证书问题导致无法调试</title>
+      <link href="/2022/03/19/xcode%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95/"/>
+      <url>/2022/03/19/xcode%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="初现"><a href="#初现" class="headerlink" title="初现"></a>初现</h1><p>将mbp 重置后安装Xcode，调试模拟器没问题，真机debug出现<code>process launch failed: Unspecified</code>。各种尝试无果后（清理项目、重装Xcode、卸载app、重启手机）后检查证书发现开发者证书不被信任。</p><h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p>后根据<a href="https://blog.csdn.net/Dancen/article/details/114406431" target="_blank" rel="noopener">这篇文章</a> 下载apple 开发者证书，后得到解决。</p><blockquote><p>目前的Apple全球开发者关系认证中间证书WWDRCA（也就是我们上面下载的那个）将于2023年2月7日到期。Apple发布了新的WWDRCA，更新后的证书过期时间为2030年2月20日，新证书将用于签署2021年1月28日后为苹果开发者项目颁发的新软件签名证书。</p></blockquote><p>Apple证书列表：</p><p><a href="https://www.apple.com/certificateauthority/" target="_blank" rel="noopener">https://www.apple.com/certificateauthority/</a></p><p>一般只要下载特定中间证书就行了，如果不能确认，可以把前缀为Worldwide Developer Relations的全部下载下来，再一个个安装。直到iphone 开发证书变为可信证书。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Xcode </tag>
+            
+            <tag> 证书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>acme 自动申请证书</title>
       <link href="/2022/02/20/acme-%E8%87%AA%E5%8A%A8%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6/"/>
       <url>/2022/02/20/acme-%E8%87%AA%E5%8A%A8%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6/</url>

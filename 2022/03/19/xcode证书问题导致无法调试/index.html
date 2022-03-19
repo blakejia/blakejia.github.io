@@ -20,16 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="记录生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="log for life">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="初现将mbp 重置后安装Xcode，调试模拟器没问题，真机debug出现process launch failed: Unspecified。各种尝试无果后（清理项目、重装Xcode、卸载app、重启手机）后检查证书发现开发者证书不被信任。 方案后根据这篇文章 下载apple 开发者证书，后得到解决。  目前的Apple全球开发者关系认证中间证书WWDRCA（也就是我们上面下载的那个）将于2023">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xcode证书问题导致无法调试">
+<meta property="og:url" content="http://yoursite.com/2022/03/19/xcode%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95/index.html">
 <meta property="og:site_name" content="log for life">
-<meta property="og:description" content="记录生活">
+<meta property="og:description" content="初现将mbp 重置后安装Xcode，调试模拟器没问题，真机debug出现process launch failed: Unspecified。各种尝试无果后（清理项目、重装Xcode、卸载app、重启手机）后检查证书发现开发者证书不被信任。 方案后根据这篇文章 下载apple 开发者证书，后得到解决。  目前的Apple全球开发者关系认证中间证书WWDRCA（也就是我们上面下载的那个）将于2023">
+<meta property="article:published_time" content="2022-03-19T13:23:41.000Z">
+<meta property="article:modified_time" content="2022-03-19T13:34:37.828Z">
 <meta property="article:author" content="Blake">
+<meta property="article:tag" content="Xcode">
+<meta property="article:tag" content="证书">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/2019/">
+<link rel="canonical" href="http://yoursite.com/2022/03/19/xcode%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95/">
 
 
 <script id="page-configurations">
@@ -37,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Archive | log for life</title>
+  <title>xcode证书问题导致无法调试 | log for life</title>
   
 
 
@@ -150,136 +154,109 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/03/19/xcode%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
+      <meta itemprop="name" content="Blake">
+      <meta itemprop="description" content="记录生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="log for life">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          xcode证书问题导致无法调试
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-03-19 21:23:41 / Modified: 21:34:37" itemprop="dateCreated datePublished" datetime="2022-03-19T21:23:41+08:00">2022-03-19</time>
+            </span>
+
+          
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 17 posts in total. Keep on posting.</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/03/19/xcode%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/03/19/xcode%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-17T14:25:01+08:00"
-              content="2019-09-17">
-          09-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/09/17/mysql-%E6%93%8D%E4%BD%9C/" itemprop="url">
-            <span itemprop="name">mysql 操作</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-06-25T21:40:44+08:00"
-              content="2019-06-25">
-          06-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/06/25/docker-%E6%90%AD%E5%BB%BA%E6%B5%8B%E8%AF%95Mysql-Mongo/" itemprop="url">
-            <span itemprop="name">docker 搭建测试Mysql Mongo</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-05-18T17:10:38+08:00"
-              content="2019-05-18">
-          05-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/05/18/ssh-%E5%8D%87%E7%BA%A7ed25519/" itemprop="url">
-            <span itemprop="name">ssh 升级ed25519</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-03-27T00:37:10+08:00"
-              content="2019-03-27">
-          03-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/03/27/linux-bbr-%E5%BC%80%E5%90%AF/" itemprop="url">
-            <span itemprop="name">linux bbr 开启</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-03-23T23:21:15+08:00"
-              content="2019-03-23">
-          03-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/03/23/linux%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/" itemprop="url">
-            <span itemprop="name">linux内核升级</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <h1 id="初现"><a href="#初现" class="headerlink" title="初现"></a>初现</h1><p>将mbp 重置后安装Xcode，调试模拟器没问题，真机debug出现<code>process launch failed: Unspecified</code>。各种尝试无果后（清理项目、重装Xcode、卸载app、重启手机）后检查证书发现开发者证书不被信任。</p>
+<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p>后根据<a href="https://blog.csdn.net/Dancen/article/details/114406431" target="_blank" rel="noopener">这篇文章</a> 下载apple 开发者证书，后得到解决。</p>
+<blockquote>
+<p>目前的Apple全球开发者关系认证中间证书WWDRCA（也就是我们上面下载的那个）将于2023年2月7日到期。Apple发布了新的WWDRCA，更新后的证书过期时间为2030年2月20日，新证书将用于签署2021年1月28日后为苹果开发者项目颁发的新软件签名证书。</p>
+</blockquote>
+<p>Apple证书列表：</p>
+<p><a href="https://www.apple.com/certificateauthority/" target="_blank" rel="noopener">https://www.apple.com/certificateauthority/</a></p>
+<p>一般只要下载特定中间证书就行了，如果不能确认，可以把前缀为Worldwide Developer Relations的全部下载下来，再一个个安装。直到iphone 开发证书变为可信证书。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Xcode/" rel="tag"># Xcode</a>
+              <a href="/tags/%E8%AF%81%E4%B9%A6/" rel="tag"># 证书</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/20/acme-%E8%87%AA%E5%8A%A8%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6/" rel="prev" title="acme 自动申请证书">
+      <i class="fa fa-chevron-left"></i> acme 自动申请证书
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -326,6 +303,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初现"><span class="nav-number">1.</span> <span class="nav-text">初现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方案"><span class="nav-number">2.</span> <span class="nav-text">方案</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

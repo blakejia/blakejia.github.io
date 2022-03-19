@@ -156,6 +156,86 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/03/19/xcode%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
+      <meta itemprop="name" content="Blake">
+      <meta itemprop="description" content="记录生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="log for life">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/19/xcode%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95/" class="post-title-link" itemprop="url">xcode证书问题导致无法调试</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-03-19 21:23:41 / Modified: 21:34:37" itemprop="dateCreated datePublished" datetime="2022-03-19T21:23:41+08:00">2022-03-19</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/03/19/xcode%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/03/19/xcode%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="初现"><a href="#初现" class="headerlink" title="初现"></a>初现</h1><p>将mbp 重置后安装Xcode，调试模拟器没问题，真机debug出现<code>process launch failed: Unspecified</code>。各种尝试无果后（清理项目、重装Xcode、卸载app、重启手机）后检查证书发现开发者证书不被信任。</p>
+<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p>后根据<a href="https://blog.csdn.net/Dancen/article/details/114406431" target="_blank" rel="noopener">这篇文章</a> 下载apple 开发者证书，后得到解决。</p>
+<blockquote>
+<p>目前的Apple全球开发者关系认证中间证书WWDRCA（也就是我们上面下载的那个）将于2023年2月7日到期。Apple发布了新的WWDRCA，更新后的证书过期时间为2030年2月20日，新证书将用于签署2021年1月28日后为苹果开发者项目颁发的新软件签名证书。</p>
+</blockquote>
+<p>Apple证书列表：</p>
+<p><a href="https://www.apple.com/certificateauthority/" target="_blank" rel="noopener">https://www.apple.com/certificateauthority/</a></p>
+<p>一般只要下载特定中间证书就行了，如果不能确认，可以把前缀为Worldwide Developer Relations的全部下载下来，再一个个安装。直到iphone 开发证书变为可信证书。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/02/20/acme-%E8%87%AA%E5%8A%A8%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -904,93 +984,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/git-hook-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://img.imjad.cn/images/2017/09/16/20170413145639_gdEyDd_head.jpg">
-      <meta itemprop="name" content="Blake">
-      <meta itemprop="description" content="记录生活">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="log for life">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/06/01/git-hook-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" class="post-title-link" itemprop="url">git hook 环境变量</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-06-01 20:50:04" itemprop="dateCreated datePublished" datetime="2018-06-01T20:50:04+08:00">2018-06-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-03-07 12:06:57" itemprop="dateModified" datetime="2019-03-07T12:06:57+08:00">2019-03-07</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2018/06/01/git-hook-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2018/06/01/git-hook-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Docker下安装的gogs</p>
-<h2 id="git-hook-执行时的环境变量"><a href="#git-hook-执行时的环境变量" class="headerlink" title="git hook 执行时的环境变量"></a>git hook 执行时的环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">HOSTNAME=gogs-gogs1                                                                                                                                              </span><br><span class="line">TERM=xterm                                                                                                      </span><br><span class="line">USER=git                                                               </span><br><span class="line">GOGS_REPO_CUSTOM_HOOKS_PATH=/data/git/gogs-repositories/user/gitRepo.git/custom_hooks</span><br><span class="line">GOGS_REPO_ID=2                                                                              </span><br><span class="line">GIT_PUSH_OPTION_COUNT=0                                                                                                       </span><br><span class="line">PATH=/usr/libexec/git-core:/usr/libexec/git-core:/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin               </span><br><span class="line">PWD=/data/git/gogs-repositories/user/gitRepo.git           </span><br><span class="line">GOGS_REPO_OWNER_NAME=user</span><br><span class="line">GOGS_AUTH_USER_NAME=user</span><br><span class="line">GOGS_REPO_NAME=gitRepo</span><br><span class="line">SHLVL=4                                                                                                </span><br><span class="line">HOME=/data/git                                                                        </span><br><span class="line">SSH_ORIGINAL_COMMAND=1                                                                </span><br><span class="line">GOGS_AUTH_USER_ID=1                                                                   </span><br><span class="line">GOGS_AUTH_USER_EMAIL=xxxx@mail.com</span><br><span class="line">GOGS_CUSTOM=/data/gogs                                                                                             </span><br><span class="line">GOGS_REPO_OWNER_SALT_MD5=94d5344c25db5ceaea76fff71f44dd51</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/06/01/git-hook-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1062,14 +1055,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

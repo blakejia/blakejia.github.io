@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2022-02-20T06:58:15.397Z</updated>
+  <updated>2022-03-19T13:34:37.828Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>xcode证书问题导致无法调试</title>
+    <link href="http://yoursite.com/2022/03/19/xcode%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95/"/>
+    <id>http://yoursite.com/2022/03/19/xcode证书问题导致无法调试/</id>
+    <published>2022-03-19T13:23:41.000Z</published>
+    <updated>2022-03-19T13:34:37.828Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;初现&quot;&gt;&lt;a href=&quot;#初现&quot; class=&quot;headerlink&quot; title=&quot;初现&quot;&gt;&lt;/a&gt;初现&lt;/h1&gt;&lt;p&gt;将mbp 重置后安装Xcode，调试模拟器没问题，真机debug出现&lt;code&gt;process launch failed: Unspeci
+      
+    
+    </summary>
+    
+    
+      <category term="Xcode" scheme="http://yoursite.com/tags/Xcode/"/>
+    
+      <category term="证书" scheme="http://yoursite.com/tags/%E8%AF%81%E4%B9%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>acme 自动申请证书</title>
